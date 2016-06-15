@@ -59,7 +59,7 @@ public class Accounts extends Controller
     {
       Logger.info("Successful authentication of  " + user.firstName + " " + user.lastName + " ");
       session.put("logged_in_userid", user.id);
-      Welcome.index();
+      InputData.index();
     }
     else
     {
