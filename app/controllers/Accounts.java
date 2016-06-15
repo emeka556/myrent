@@ -46,6 +46,8 @@ public class Accounts extends Controller
     User user = new User(firstName, lastName, email, password);
     user.save();
     Login();
+    
+    
 
   }
   
@@ -55,7 +57,7 @@ public class Accounts extends Controller
     User user = User.findByEmail(email);
     if ((user != null) && (user.checkPassword(password) == true))
     {
-      Logger.info("Successful authentication of  " + user.firstName + " " + user.lastName);
+      Logger.info("Successful authentication of  " + user.firstName + " " + user.lastName + " ");
       session.put("logged_in_userid", user.id);
       Welcome.index();
     }
