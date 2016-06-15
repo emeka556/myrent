@@ -12,6 +12,10 @@ GET		/Signup									Accounts.Signup
 POST    /authenticate                           Accounts.authenticate
 POST    /register                               Accounts.register
 
+# InputData
+GET     /InputData								InputData.index
+POST    /InputData/InputData					InputData.InputData
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
