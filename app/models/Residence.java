@@ -16,24 +16,24 @@ import play.db.jpa.Model;
 @Entity
 public class Residence extends Model {
 
-	public String status; //rented or vacant
+	public String rented; //rented or vacant
 	public String geolocation;
 	public String postDate;
 	public String residenceType;
 	
-	public int numbOfBedrooms;
 	public int rent; //how much rent is
+	public int numbOfBedrooms;
 	
 	@ManyToOne
 	public User from;
 	
 	public Residence (User from, String geolocation, String residenceType, 
-			String status, int rent, int numbOfBedrooms ){
+			String rented, int numbOfBedrooms, int rent  ){
 		
 		this.from = from;
 		this.geolocation = geolocation;
 		this.residenceType = residenceType;
-		this.status = status;
+		this.rented = rented;
 		this.rent = rent;
 		this.numbOfBedrooms = numbOfBedrooms;
 		postDate = dateValidator();
