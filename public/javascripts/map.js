@@ -1,23 +1,27 @@
 function initialize() 
 {
-    const latlng = new google.maps.LatLng(52.254427, -7.185281);
+     latlng = new google.maps.LatLng(53.347298, -6.268344);
 
+    const mapOptions = 
+    {
+        center      : new google.maps.LatLng(latlng.lat(), latlng.lng()),
+        mapTypeId   : google.maps.MapTypeId.MAP,
+        zoom        : 8
+    };
+    
+     map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+    
     // place a marker
-    const marker = new google.maps.Marker({
+     marker = new google.maps.Marker({
         map         : map,
         position    : latlng,
         title       : "Drag and drop on your property!",
         draggable   : true
     });
 
-    const mapOptions = 
-    {
-        center      : new google.maps.LatLng(latlng.lat(), latlng.lng()),
-        mapTypeId   : google.maps.MapTypeId.SATELLITE,
-        zoom        : 16
-    };
-    const map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+   
+    
 
     // This adds the marker to the map
     marker.setMap(map); 

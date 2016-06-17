@@ -13,9 +13,10 @@ public class InputData extends Controller {
 		render();
 	}
 
-	public static void InputData(String location, int rent, int bedrooms, String status, String type) {
+	public static void InputData(String geolocation, int rent, int numbOfBedrooms, String status, String residenceType) {
 		User user = Accounts.getCurrentUser();
-		
+		Residence findR = new Residence (user, geolocation, residenceType, status, numbOfBedrooms, rent);
+		findR.save();
 		index();
 	}
 
