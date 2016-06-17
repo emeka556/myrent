@@ -43,7 +43,7 @@ public class Residence extends Model {
 		Date createOn = new Date();
 		createOn = new Timestamp(createOn.getTime());
 		DateFormat dformat = new SimpleDateFormat("E dd/MM/yy - KK:mm a");
-		Logger.info("Date Created On " + createOn + "postDate " + dformat.format(createOn));
+		Logger.info("Date Created On " + createOn + " postDate " + dformat.format(createOn));
 		return dformat.format(createOn);
 }
 }
