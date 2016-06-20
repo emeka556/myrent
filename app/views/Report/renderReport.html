@@ -1,0 +1,67 @@
+#{extends 'main.html' /}
+#{set title:'Generated report of MyRent' /}
+
+<nav class="ui inverted blue menu">
+  <a class="ui item" href="/">Welcome</a>
+  <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
+  <a class="ui item" href="/Accounts/Login">Log In</a>
+  <a class="ui item" href="/InputData">Input data</a>
+  <a class="ui active item" href="/Report">Report</a>
+  
+  <a class="ui item" href="/Logout">Logout</a>
+</nav>
+
+<div class="ui grid">
+  <div class="fourteen wide column">
+  <section class="ui segment">
+    <h4>Report</h4>           
+         
+        <section class="ui segment">
+            <table class ="ui table segment">
+                <thead>
+                    <tr>
+                        <th><i class="user icon"></i>Commissioned by</th>
+                        <th><i class="search icon"></i>Search: radius(m)</th>
+                        <th><i class="world icon"></i>center(latitude)</th>
+                        <th><i class="world icon"></i>center(longitude)</th>
+                    </tr>       
+                </thead>
+                <tbody>           
+                    <tr>
+                      <td>${user.firstName} ${user.lastName}</td>
+                      <td>${circle.radius}</td>
+                      <td>${circle.latcenter}</td>
+                      <td>${circle.lngcenter}</td>
+                    </tr>         
+                </tbody>            
+            </table> 
+
+
+	<table class="ui table segment">
+	<thead>
+	  <tr>
+	    <th>Residence User</th>
+	    <th>Date registered</th>
+        <th>Property Geolocation</th>
+        <th>Rented ?</th>
+        <th>Rent<i class="euro icon"></i></th>
+        <th>Residence Type</th>
+        <th>Bedrooms</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  #{list items:residences, as:'render'}
+	    <tr>
+	      <td><i class="user icon"></i>&nbsp${render.from.firstName}&nbsp${render.from.lastName} </td>
+	      <td><i class="calendar icon"></i>${render.postDate}</td>
+	      <td><i class="world icon"></i>${render.geolocation}</td>
+	      <td> ${render.rented}</td>
+	      <td> ${render.rent}</td>
+	      <td><i class="home icon"></i>${render.residenceType}</td>
+	      <td><i class="bed icon"></i>${render.numbOfBedrooms}</td>
+	    </tr>
+	  #{/list}
+	</tbody>
+	</table>
+  </div>
+</div>

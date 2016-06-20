@@ -11,7 +11,7 @@ import utils.Circle;
 import utils.Geodistance;
 import utils.LatLng;
 
-public class ReportController extends Controller
+public class Report extends Controller
 {
   /**
    * This method executed before each action call in the controller.
@@ -48,7 +48,7 @@ public class ReportController extends Controller
         residences.add(res);
       }
     }
-    render("ReportController/renderReport.html", user, circle, residences);
+    render("Report/renderReport.html", user, circle, residences);
   }
 
   /**
