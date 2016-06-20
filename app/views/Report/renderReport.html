@@ -40,6 +40,7 @@
 	<table class="ui table segment">
 	<thead>
 	  <tr>
+	  	<th>Residence ID</th>
 	    <th>Residence User</th>
 	    <th>Date registered</th>
         <th>Property Geolocation</th>
@@ -52,6 +53,7 @@
 	<tbody>
 	  #{list items:residences, as:'render'}
 	    <tr>
+	      <td>${render.id}</td>
 	      <td><i class="user icon"></i>&nbsp${render.from.firstName}&nbsp${render.from.lastName} </td>
 	      <td><i class="calendar icon"></i>${render.postDate}</td>
 	      <td><i class="world icon"></i>${render.geolocation}</td>
