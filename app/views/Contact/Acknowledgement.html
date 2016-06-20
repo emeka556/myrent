@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Acknowledgement contact of MyRent' /}
+
+<nav class="ui inverted blue menu">
+  <a class="ui item" href="/">Welcome</a>
+  <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
+  <a class="ui item" href="/Accounts/Login">Log In</a>
+  <a class="ui item" href="/InputData">Input data</a>
+  <a class="ui item" href="/Report">Report</a>
+  <a class="ui active item" href="/Contact">Contact</a>
+  <a class="ui item" href="/Logout">Logout</a>
+</nav>
+
+<section class="ui segment">
+ <h2 class="title"> MyRent</h2>
+ <h3>Acknowledgement</h3>
+ <div class="ui two colum grid">
+  <div class="eight wide column">
+    <div class="ui raised segment">
+		<p>Thank you for your message ${firstName} ${lastName}</p>
+		<p>We very much appreciate you taking the time out of you very busy schedule to contact us.</p> 
+		<p>We will deal with the issues you have raised and advise you of the outcome as soon as possible</p>
+		<br>
+		
+		With best wishes,
+	
+		<br>
+		From the MyRent team  
+    </div>
+  </div>
+  <div class="two wide column">
+    <img class="ui image" src="/public/images/acknowledgement.gif">
+  </div>
+</div>
+</section>

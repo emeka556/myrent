@@ -25,12 +25,12 @@ public class Contact extends Controller {
 		render();
 	}
 
-	@SuppressWarnings("unused")
+	
 	public static void messageSMS(String FirstName, String Surname, String emailAdd, String messagetxt) {
-		User user = Accounts.getCurrentUser();
+		
 		ContactInfo cinfo = new ContactInfo (FirstName, Surname, emailAdd, messagetxt);
 		cinfo.save();
-		index();
+		render("Contact/Acknowledgement.html" ,cinfo);
 	}
 
 }

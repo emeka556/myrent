@@ -18,11 +18,11 @@ POST    /InputDatas								InputData.InputDatas
 
 # Report
 GET		/Report			    					Report.index
-POST    /Report/generateReport					Report.generateReport
+POST    /generateReport							Report.generateReport
 
 # Contact
 GET 	/Contact								Contact.index
-POST 	/Contact/messageSMS						Contact.messageSMS
+POST 	/messageSMS								Contact.messageSMS
 
 
 # Ignore favicon requests
