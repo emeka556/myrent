@@ -2,13 +2,13 @@
 #{set title:'Generated report of MyRent' /}
 
 <nav class="ui inverted blue menu">
-  <a class="ui item" href="/">Welcome</a>
-  <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
-  <a class="ui item" href="/Accounts/Login">Log In</a>
-  <a class="ui item" href="/InputData">Input data</a>
-  <a class="ui active item" href="/Report">Report</a>
-  
-  <a class="ui item" href="/Logout">Logout</a>
+  <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
+  <a class="ui item" href="/Accounts/SignUp"><i class="pointing up icon"></i>Sign Up</a>
+  <a class="ui item" href="/Accounts/Login"><i class="sign in icon"></i>Log In</a>
+  <a class="ui item" href="/InputData"><i class="pie chart icon"></i>Input data</a>
+  <a class="ui active item" href="/Report"><i class="newspaper icon"></i>Report</a>
+  <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+  <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a>
 </nav>
 
 <div class="ui grid">
@@ -20,10 +20,10 @@
             <table class ="ui table segment">
                 <thead>
                     <tr>
-                        <th><i class="user icon"></i>Commissioned by</th>
-                        <th><i class="search icon"></i>Search: radius(m)</th>
-                        <th><i class="world icon"></i>center(latitude)</th>
-                        <th><i class="world icon"></i>center(longitude)</th>
+                        <th><i class="user blue icon"></i>Commissioned by</th>
+                        <th><i class="search blue icon"></i>Search: radius(m)</th>
+                        <th><i class="world blue icon"></i>center(latitude)</th>
+                        <th><i class="world blue icon"></i>center(longitude)</th>
                     </tr>       
                 </thead>
                 <tbody>           
@@ -54,13 +54,13 @@
 	  #{list items:residences, as:'render'}
 	    <tr>
 	      <td>${render.id}</td>
-	      <td><i class="user icon"></i>&nbsp${render.from.firstName}&nbsp${render.from.lastName} </td>
-	      <td><i class="calendar icon"></i>${render.postDate}</td>
-	      <td><i class="world icon"></i>${render.geolocation}</td>
+	      <td><i class="user blue icon"></i>&nbsp${render.from.firstName}&nbsp${render.from.lastName} </td>
+	      <td><i class="calendar blue icon"></i>${render.postDate}</td>
+	      <td><i class="world blue icon"></i>${render.geolocation}</td>
 	      <td> ${render.rented}</td>
 	      <td> ${render.rent}</td>
-	      <td><i class="home icon"></i>${render.residenceType}</td>
-	      <td><i class="bed icon"></i>${render.numbOfBedrooms}</td>
+	      <td><i class="home blue icon"></i>${render.residenceType}</td>
+	      <td><i class="bed blue icon"></i>${render.numbOfBedrooms}</td>
 	    </tr>
 	  #{/list}
 	</tbody>
