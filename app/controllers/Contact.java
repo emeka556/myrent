@@ -9,17 +9,7 @@ import models.*;
 
 public class Contact extends Controller {
 	
-	 /**
-	   * This method executed before each action call in the controller.
-	   * Checks that a user has logged in.
-	   * If no user logged in the user is presented with the log in screen.
-	   */
-	  @Before
-	  static void checkAuthentification()
-	  {
-	    if(session.contains("logged_in_userid") == false)
-	      Accounts.Login();
-	  }
+	 
 
 	public static void index() {
 		render();
