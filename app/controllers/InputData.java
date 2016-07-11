@@ -25,9 +25,9 @@ public class InputData extends Controller {
 		render();
 	}
 
-	public static void InputDatas(String geolocation, int rent, int numbOfBedrooms, String rented, String residenceType) {
+	public static void InputDatas(String geolocation, int rent, int numbOfBedrooms, String rented, String residenceType, int numberBathrooms, int area) {
 		User user = Accounts.getCurrentUser();
-		Residence findR = new Residence (user, geolocation, residenceType, rented, numbOfBedrooms, rent);
+		Residence findR = new Residence (user, geolocation, residenceType, rented, numbOfBedrooms, rent, numberBathrooms, area);
 		findR.save();
 		index();
 	}

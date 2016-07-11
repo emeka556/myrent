@@ -23,12 +23,14 @@ public class Residence extends Model {
 	
 	public int rent; //how much rent is
 	public int numbOfBedrooms;
+	public int numberBathrooms;
+	public int area; // the area of the residence in square metres
 	
 	@ManyToOne
 	public User from;
 	
 	public Residence (User from, String geolocation, String residenceType, 
-			String rented, int numbOfBedrooms, int rent  ){
+			String rented, int numbOfBedrooms, int rent, int numberBathrooms, int area ){
 		
 		this.from = from;
 		this.geolocation = geolocation;
@@ -36,7 +38,9 @@ public class Residence extends Model {
 		this.rented = rented;
 		this.rent = rent;
 		this.numbOfBedrooms = numbOfBedrooms;
-		postDate = dateValidator();
+		this.numberBathrooms = numberBathrooms;
+		this.area = area;
+			postDate = dateValidator();
 	}
 
 	public String dateValidator() {
