@@ -18,7 +18,7 @@ public class InputData extends Controller {
 	  static void checkAuthentification()
 	  {
 	    if(session.contains("logged_in_userid") == false)
-	      Accounts.Login();
+	      Landlords.Login();
 	  }
 
 	public static void index() {
@@ -26,7 +26,7 @@ public class InputData extends Controller {
 	}
 
 	public static void InputDatas(String geolocation, int rent, int numbOfBedrooms, String rented, String residenceType, int numberBathrooms, int area) {
-		User user = Accounts.getCurrentUser();
+		Landlord user = Landlords.getCurrentLandlord();
 		Residence findR = new Residence (user, geolocation, residenceType, rented, numbOfBedrooms, rent, numberBathrooms, area);
 		findR.save();
 		index();

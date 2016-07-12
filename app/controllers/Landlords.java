@@ -7,7 +7,7 @@ import java.util.*;
 
 import models.*;
 
-public class Accounts extends Controller
+public class Landlords extends Controller
 {
 
   public static void index()
@@ -17,7 +17,7 @@ public class Accounts extends Controller
 
   public static void Signup()
   {
-    render();
+    render("Accounts/signup.html");
   }
 
   /**
@@ -25,7 +25,7 @@ public class Accounts extends Controller
    */
   public static void Login()
   {
-    render();
+    render("Accounts/login.html");
   }
 /**
  * clears session info logged
@@ -43,8 +43,8 @@ public class Accounts extends Controller
   public static void register(String firstName, String lastName, String email, String password)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
-    User user = new User(firstName, lastName, email, password);
-    user.save();
+    Landlord landlord = new Landlord(firstName, lastName, email, password);
+    landlord.save();
     Login();
     
     
@@ -54,11 +54,11 @@ public class Accounts extends Controller
   public static void authenticate(String email, String password)
   {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
-    User user = User.findByEmail(email);
-    if ((user != null) && (user.checkPassword(password) == true))
+    Landlord landlord = Landlord.findByEmail(email);
+    if ((landlord != null) && (landlord.checkPassword(password) == true))
     {
-      Logger.info("Successful authentication of  " + user.firstName + " " + user.lastName + " ");
-      session.put("logged_in_userid", user.id);
+      Logger.info("Successful authentication of  " + landlord.firstName + " " + landlord.lastName + " ");
+      session.put("logged_in_userid", landlord.id);
       InputData.index();
     }
     else
@@ -68,16 +68,16 @@ public class Accounts extends Controller
     }
   }
 
-  public static User getCurrentUser()
+  public static Landlord getCurrentLandlord()
   {
     String userId = session.get("logged_in_userid");
     if (userId == null)
     {
       return null;
     }
-    User logged_in_user = User.findById(Long.parseLong(userId));
-    Logger.info("Logged in User: " + logged_in_user.firstName);
-    return logged_in_user;
+    Landlord logged_in_landlord = Landlord.findById(Long.parseLong(userId));
+    Logger.info("Logged in Landlord: " + logged_in_landlord.firstName);
+    return logged_in_landlord;
   }
 
 }
