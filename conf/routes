@@ -5,12 +5,12 @@
 # Home Page
 GET     /   									Welcome.index
 
-# Accounts
-GET     /Login									Accounts.Login
-GET 	/Logout									Accounts.Logout
-GET		/Signup									Accounts.Signup
-POST    /authenticate                           Accounts.authenticate
-POST    /register                               Accounts.register
+# Landlords
+GET     /Login									Landlords.Login
+GET 	/Logout									Landlords.Logout
+GET		/Signup									Landlords.Signup
+POST    /authenticate                           Landlords.authenticate
+POST    /register                               Landlords.register
 
 # InputData
 GET     /InputData								InputData.index

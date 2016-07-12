@@ -27,9 +27,9 @@ public class Residence extends Model {
 	public int area; // the area of the residence in square metres
 	
 	@ManyToOne
-	public User from;
+	public Landlord from;
 	
-	public Residence (User from, String geolocation, String residenceType, 
+	public Residence (Landlord from, String geolocation, String residenceType, 
 			String rented, int numbOfBedrooms, int rent, int numberBathrooms, int area ){
 		
 		this.from = from;
