@@ -1,37 +1,16 @@
+// initialize the controls in the input data template and validate residence type
 $('.ui.dropdown').dropdown();
 $('#progress').progress();
-$('.ui.radio.checkbox').checkbox();
-
+$('.ui.checkbox').checkbox();
 $('.ui.form')
 .form({
-  fields: {
-    rent: {
-      identifier: 'rent',
-      rules: [
-        {
-          type   : 'empty',
-          prompt : 'Please enter your first name the rent at specified location'
-        }
-      ]
-    },
-    bedrooms: {
-      identifier: 'bedrooms',
-      rules: [
-        {
-          type   : 'empty',
-          prompt : 'Please enter number of Bedrooms at specified location'
-        }
-      ]
-    },
-    type: {
-        identifier: 'type',
-        rules: [
-          {
-            type: 'empty',
-            prompt: 'You forgot to give us money , Please select amount to donate'
-          }
-        ]
+  residenceType : {
+    identifier : 'residenceType',
+    rules: [
+      {
+          type : 'empty',
+          prompt: 'Please select a residence type'
       }
+    ]
   }
-})
-;
+});

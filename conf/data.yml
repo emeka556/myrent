@@ -15,8 +15,53 @@ User(bart):
     lastName: Simpson
     email: bart@simpson.com
     password: secret
-
+  
+Residence(residences1): 
+    from: homer 
+    geolocation: 53.347298,  -6.268344 
+    rent: 1800 
+    rented: vacant
+    residenceType: house 
+    numbOfBedrooms: 5 
+    area: 70 
+    numberBathrooms: 3 
+    postDate: Mon 11/07/16 - 01:15 PM 
     
+Residence(residences2): 
+    from: bart 
+    geolocation: 53.146264,  -6.268344 
+    rent: 1000 
+    rented: rented
+    residenceType: house 
+    numbOfBedrooms: 4 
+    area: 80 
+    numberBathrooms: 2 
+    postDate: Tue 11/07/16 - 02:15 PM 
+
+Residence(residences3): 
+    from: marge 
+    geolocation: 53.947298,  -6.468344 
+    rent: 800 
+    rented: vacant
+    residenceType: house 
+    numbOfBedrooms: 3 
+    area: 120 
+    numberBathrooms: 2 
+    postDate: Tue 11/07/16 - 01:15 PM 
+    
+Residence(residences4): 
+    from: homer 
+    geolocation: 53.446274,  -6.368344 
+    rent: 2000 
+    rented: rented
+    residenceType: house 
+    numbOfBedrooms: 6 
+    area: 180 
+    numberBathrooms: 4 
+    postDate: Tue 11/07/16 - 04:15 PM 
+    
+
+
 
 
 
