@@ -60,7 +60,7 @@
 		            <div class="ui label">
 		              Rent (&euro;)
 		            </div>   
-                 <input value="1500" id = "rent" name="rent"  type="text" size="4">
+                 <input value="1500" id = "rent" name="rent" type="text" size="4" required>
              </div>
 		        </div>
 		      </div>
@@ -72,7 +72,7 @@
                 <div class="ui label">
                   Bedrooms:
                 </div>   
-                <input value="3" id = "numbOfBedrooms" name="numbOfBedrooms"  type="text" size=1>
+                <input value="3" id = "numbOfBedrooms" name="numbOfBedrooms"  type="text" size=1 required>
              </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
 		            <div class="ui label">
 		              Number Bathrooms
 		            </div>   
-                 <input value="2" id = "numberBathrooms" name="numberBathrooms"  type="text" size="1">
+                 <input value="2" id = "numberBathrooms" name="numberBathrooms" type="text" size="1" required >
              </div>
 		        </div>
 		      </div>
@@ -98,7 +98,7 @@
                 <div class="ui label">
                   Area (m <sup>2</sup>):
                 </div>   
-                <input value="110" id = "area" name="area"  type="text" size=1em>
+                <input value="110" id = "area" name="area" type="text" size=1em required >
              </div>
             </div>
           </div>
@@ -117,16 +117,28 @@
 				  </div> 
         </div>
         
+        <div class="ui two column grid">
+          <div class="column">
+           <div class="ui fluid form segment">
         <div class="form-actions">
           <div class="ui blue submit button">Submit Data <i class="add icon"></i></div>
           <div class="ui error message"></div>
           
         </div>
-      </div>            
+        
+        </div> 
+      </div>   
+      </div>
+      </div>  
+      
+      
+               
       
             <div class="column">
         <div class="ui raised fluid form segment">
           <div id="map-canvas" class= "ui 4:3 embed " ></div> 
+          
+          
           
           <script src="@{'/public/javascripts/map.js'}" type="text/javascript" charset="utf-8"></script>
         </div>
@@ -135,6 +147,20 @@
     </div>
     
   </form> 
+</section>
+<section>
+<form action="/LandlordEditProfile" method="GET">
+				<div class="ui fluid form segment">
+					<button type="submit" class="ui fluid  blue submit button">Edit
+						Landlord Profile</button>
+				</div>
+			</form>
+
+
+       
+       
+
+
 </section>
 <script src="@{'/public/javascripts/InputData.js'}" type="text/javascript" charset="utf-8"></script>
 

@@ -40,10 +40,10 @@ public class Landlords extends Controller
  *method to save user information
  *firstname, lastname, email and password in database
  */
-  public static void register(String firstName, String lastName, String email, String password)
+  public static void register(String firstName, String lastName, String email, String password, String city, String county, String line1Add, String line2Add)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
-    Landlord landlord = new Landlord(firstName, lastName, email, password);
+    Landlord landlord = new Landlord(firstName, lastName, email, password, city, county, line1Add, line2Add);
     landlord.save();
     Login();
     
@@ -79,5 +79,12 @@ public class Landlords extends Controller
     Logger.info("Logged in Landlord: " + logged_in_landlord.firstName);
     return logged_in_landlord;
   }
+
+public static void redirect() {
+	
+		render();
+	}
+
+
 
 }

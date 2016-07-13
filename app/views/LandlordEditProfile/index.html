@@ -1,0 +1,65 @@
+#{extends 'main.html' /}
+#{set title:'InputData for myrent' /}
+
+<nav class="ui inverted blue menu">
+  <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
+
+  <a class="ui item" href="/Landlords/SignUp"><i class="pointing up icon"></i>Sign Up</a>
+  <a class="ui item" href="/Landlords/Login"><i class="sign in icon"></i>Log In</a> 
+  <a class="ui item" href="/InputData"><i class="pie chart icon"></i>Input data</a>
+  <a class="ui item" href="/Report"><i class="newspaper icon"></i>Report</a>  
+  <a class="ui active item" href="/LandlordEditProfile">Edit Profile</a>  
+  <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+  <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a>
+
+
+</nav> 
+
+
+<section class="ui segment">
+  <h3>You may edit your profile here</h3>
+  <form action="/LandlordEditProfiles" method="POST">
+
+  <div class="ui form">
+  
+	  <div class="fields">
+	    <div class="four wide field">
+	      <label>First name</label>
+	      <input value=Homer id="firstName" name="firstName" type="text" required>
+	    </div>   
+	    <div class="four wide field">
+	      <label>Last name</label>
+	      <input value=Simpson name="lastName" type="text" required>
+	    </div>      
+	  </div>
+
+	  <div class="fields">
+		  <div class="four wide field">
+		    <label>Address Line 1</label>
+		    <input value='address1' name="line1Add" type="text" required>
+		  </div> 
+		  <div class="four wide field">
+		    <label>Address Line 2</label>
+		    <input value='address2' name="line2Add" type="text" required>
+		  </div> 
+	  </div> 
+  
+	  <div class="fields"> 
+	    <div class="four wide field">
+	      <label>City</label>
+	      <input value=city name="city" type="text" required>
+	      </div>    
+	    <div class="four wide field">
+	      <label>County</label>
+	      <input value=county name="county" type="text" required>
+	      </div> 
+	  </div> 	  
+	   
+    <button type="submit" class="ui blue submit button">Submit</button>  
+    <input type="button" class="ui blue submit button" value="Cancel" onClick="history.go(-1);return true;"></input>
+  </div>
+  </form>
+</section>
+   </body>
+
+</html>

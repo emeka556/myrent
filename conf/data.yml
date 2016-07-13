@@ -3,18 +3,30 @@ Landlord(homer):
     lastName: Simpson
     email: homer@simpson.com
     password: secret
+    city: New york
+    county: New Jersey
+    line1Add: 10 springfield avenue
+    line2Add: springfield park
     
 Landlord(marge):
     firstName: Marge
     lastName: Simpson
     email: marge@simpson.com
     password: secret
+    city: New york
+    county: New Jersey
+    line1Add: 10 springfield avenue
+    line2Add: springfield park
  
 Landlord(bart):
     firstName: Bart
     lastName: Simpson
     email: bart@simpson.com
     password: secret
+    city: New york
+    county: New Jersey
+    line1Add: 10 springfield avenue
+    line2Add: springfield park
   
 Residence(residences1): 
     from: homer 
