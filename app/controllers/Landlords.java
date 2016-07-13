@@ -44,7 +44,7 @@ public class Landlords extends Controller
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
 
-    Landlord landlord = new Landlord(firstName, lastName, email, password, city, county, line1Add, line2Add);
+    Landlord landlord = new Landlord(firstName, lastName, email, password , city, county, line1Add, line2Add);
 
     
 

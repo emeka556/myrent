@@ -1,5 +1,10 @@
 package models;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -10,13 +15,25 @@ public class Landlord extends Model
   public String lastName;
   public String email;
   public String password;
+  public String city;
+  public String county;
+  public String line1Add;
+  public String line2Add;
+  
+  @OneToMany(mappedBy = "from", cascade = CascadeType.ALL) 
+  public List<Residence> residences = new ArrayList<>(); 
 
-  public Landlord(String firstName, String lastName, String email, String password)
+
+  public Landlord(String firstName, String lastName, String email, String password, String line1Add,String line2Add,String city, String county)
   {
     this.firstName = firstName;
     this.lastName  = lastName;
     this.email     = email;
     this.password  = password;
+    this.line1Add = line1Add;
+    this.line2Add = line2Add;
+    this.city = city;
+    this.county = county;
   }
   
   public static Landlord findByEmail(String email)
