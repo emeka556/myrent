@@ -72,9 +72,39 @@ Residence(residences4):
     numberBathrooms: 4 
     postDate: Tue 11/07/16 - 04:15 PM 
     
+Tenant(krusty):
+    firstName: Krusty
+    lastName: Clown
+    email: krusty@clown.com
+    password: secret
+
+Tenant(klovn):
+    firstName: Klovn
+    lastName: Krasti
+    email: klovn@krasti.com
+    password: secret
+
+Tenant(moe):
+    firstName: Moe
+    lastName: Szyslak
+    email: moe@szyslak.com
+    password: secret
+    
+Tenant(ned):
+    firstName: Ned
+    lastName: Flander
+    email: ned@flander.com
+    password: secret
+    
+Tenant(barney):
+    firstName: Barney
+    lastName: Gumble
+    email: barney@gumble.com
+    password: secret
 
 
 
 
 
 
+ned

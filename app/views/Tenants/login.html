@@ -1,14 +1,11 @@
-#{extends 'main.html' /} #{set title:'Login to myrent' /}
+#{extends 'main.html' /} #{set title:'Login to Tenants' /}
 
 
 
 <nav class="ui inverted blue menu">
   <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
-  <a class="ui item" href="/Landlords/SignUp"><i class="pointing up icon"></i>Sign Up</a>
-  <a class="ui item" href="/Accounts/SignUp"><i class="pointing up icon"></i>Sign Up</a>
-  <a class="ui active item" href="/Landlords/Login"><i class="sign in icon"></i>Log In</a>
-  <a class="ui item" href="/InputData"><i class="pie chart icon"></i>Input data</a>
-  <a class="ui item" href="/Report"><i class="newspaper icon"></i>Report</a>
+   <a class="ui item" href="/Tenants/Signup"><i class="pointing up icon"></i>Sign Up</a>
+  <a class="ui active item" href="/Tenants/Login"><i class="sign in icon"></i>Log In</a>
   <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
   <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a>
   
@@ -18,7 +15,7 @@
 <img class="ui small centre image" src="/public/images/login.jpg">
   <h3>Log into your account</h3>
   <h5>Your username is the email you registered with</h5>
-  <form action="/Landlords/authenticate" method="POST">
+  <form action="/Tenants/authenticate" method="POST">
   <div class="ui two colum grid">
   <div class="ten wide column">
     

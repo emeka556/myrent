@@ -1,4 +1,4 @@
-#{extends 'main.html' /} #{set title:'Welcome' /} 
+#{extends 'main.html' /} #{set title:'Welcome Tenant' /} 
 
 
 <nav class="ui inverted blue menu">
@@ -10,7 +10,7 @@
 
 
 <section class="ui segment">
- <h2 class="title">Welcome to MyRent</h2>
+ <h2 class="title">Welcome ${tenant.firstName} ${tenant.lastName} to MyRent</h2>
  <h3>Your guide to residential property</h3>
  <div class="ui two column grid">
   <div class="ten wide column">
@@ -42,7 +42,7 @@
   <div class="six wide column">
     
     
-    <img class="ui image" src="/public/images/home.png">
+    <img class="ui image" src="/public/images/Tenants.jpg">
   </div>
   </div>
 

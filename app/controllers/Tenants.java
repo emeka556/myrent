@@ -7,17 +7,18 @@ import java.util.*;
 
 import models.*;
 
-public class Landlords extends Controller
+public class Tenants extends Controller
 {
 
   public static void index()
   {
-    render();
+	  Tenant tenant = Tenants.getCurrentTenant();
+    render(tenant);
   }
 
   public static void Signup()
   {
-    render("Landlords/signup.html");
+    render("Tenants/signup.html");
   }
 
   /**
@@ -25,7 +26,7 @@ public class Landlords extends Controller
    */
   public static void Login()
   {
-    render("Landlords/login.html");
+    render("Tenants/login.html");
   }
 /**
  * clears session info logged
@@ -40,15 +41,15 @@ public class Landlords extends Controller
  *method to save user information
  *firstname, lastname, email and password in database
  */
-  public static void register(String firstName, String lastName, String email, String password, String city, String county, String line1Add, String line2Add)
+  public static void register(String firstName, String lastName, String email, String password)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
 
-    Landlord landlord = new Landlord(firstName, lastName, email, password , city, county, line1Add, line2Add);
+    Tenant tenant = new Tenant(firstName, lastName, email, password );
 
     
 
-    landlord.save();
+    tenant.save();
     Login();
     
     
@@ -58,12 +59,12 @@ public class Landlords extends Controller
   public static void authenticate(String email, String password)
   {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
-    Landlord landlord = Landlord.findByEmail(email);
-    if ((landlord != null) && (landlord.checkPassword(password) == true))
+    Tenant tenant = Tenant.findByEmail(email);
+    if ((tenant != null) && (tenant.checkPassword(password) == true))
     {
-      Logger.info("Successful authentication of  " + landlord.firstName + " " + landlord.lastName + " ");
-      session.put("logged_in_userid", landlord.id);
-      InputData.index();
+      Logger.info("Successful authentication of  " + tenant.firstName + " " + tenant.lastName + " ");
+      session.put("logged_in_userid", tenant.id);
+      Tenants.index();
     }
     else
     {
@@ -72,16 +73,16 @@ public class Landlords extends Controller
     }
   }
 
-  public static Landlord getCurrentLandlord()
+  public static Tenant getCurrentTenant()
   {
     String userId = session.get("logged_in_userid");
     if (userId == null)
     {
       return null;
     }
-    Landlord logged_in_landlord = Landlord.findById(Long.parseLong(userId));
-    Logger.info("Logged in Landlord: " + logged_in_landlord.firstName);
-    return logged_in_landlord;
+    Tenant logged_in_tenant = Tenant.findById(Long.parseLong(userId));
+    Logger.info("Logged in Tenant: " + logged_in_tenant.firstName);
+    return logged_in_tenant;
   }
 
 public static void redirect() {

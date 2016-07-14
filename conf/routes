@@ -11,14 +11,22 @@ GET 	/Logout									Landlords.Logout
 GET		/Signup									Landlords.Signup
 POST    /authenticate                           Landlords.authenticate
 POST    /register                               Landlords.register
-<<<<<<< HEAD
+
 
 # Edit Landlords Profile
 GET		/LandlordEditProfile					LandlordEditProfile.index
 POST    /LandlordEditProfiles                   LandlordEditProfile.changeDetails
 
-=======
->>>>>>> 5a6f95cbc4564222b4f88f96d457bf062921249e
+
+# Tenants
+
+GET     /Tenants/Login							Tenants.Login
+GET 	/Tenants/Logout							Tenants.Logout
+GET		/Tenants/Signup							Tenants.Signup
+POST    /Tenants/authenticate                   Tenants.authenticate
+POST    /Tenants/register                       Tenants.register
+
+
 
 # InputData
 GET     /InputData								InputData.index

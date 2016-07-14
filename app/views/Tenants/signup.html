@@ -1,0 +1,67 @@
+#{extends 'main.html' /}
+#{set title:'Signup for Tenants' /}
+
+
+<nav class="ui inverted blue menu">
+	<a class="ui item" href="/"><i class="home icon"></i>Welcome</a> 
+	<a class="ui active item" href="/Tenants/SignUp"><i class="pointing up icon"></i>Sign Up</a> 
+	<a class="ui item" href="/Tenants/Login"><i class="sign in icon"></i>Log In</a> 
+	  <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+  <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a>
+	
+</nav>
+
+<section class="ui segment">
+	
+	<h3>Create Tenant account</h3>
+	<h5>Register using a valid email address</h5>
+	<form action="/Tenants/register" method="POST">
+	  <div class="ui two column grid">
+	  
+	  <div class="column">
+	    <div class="ui raised segment">
+	    <div class="ui fluid form segment">
+	      <div class="two fields">
+	      
+	        <div class="field">
+	        <label>First Name</label>
+	          <input placeholder="First Name" name="firstName" type="text" required>
+	        </div>
+	        
+	        <div class="field">
+	        <label>Last Name</label>
+	          <input placeholder="Last Name" name="lastName" type="text" required>
+	        </div>
+	      </div>
+	      
+	      <div class="ui left icon input field">
+	      <label>Email</label>
+          <input placeholder="Email" name="email" type="text" required>
+          <i class="user icon"></i>
+        </div>
+        <div class="ui left icon input field">
+        <label>Password</label>
+          <input placeholder="Password" type="password" name="password" required>
+          <i class="lock icon"></i>
+        </div>
+       	  
+	      <div class="inline field">
+	        <div class="ui checkbox">
+	          <input id="conditions" type="checkbox" required>
+	          <label for="conditions">I agree to the terms and conditions</label>
+	        </div>
+	      </div>
+	      <button type="submit" class="ui blue submit button">Submit</button>
+	    </div>
+	  </div>
+	</div>
+		
+	</form>
+	 <div class="six wide column">
+    
+    <div class="two wide column">
+    <img class="ui large image" src="/public/images/signup.jpg">
+  </div>
+  </div>
+</section>
+	
