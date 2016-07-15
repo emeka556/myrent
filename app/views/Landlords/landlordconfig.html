@@ -1,0 +1,99 @@
+#{extends 'main.html' /} #{set title:'Landlord Configuration to myrent' /}
+
+
+
+<nav class="ui inverted blue menu">
+  <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
+ 
+  
+  <a class="ui active item" href="/LandlordConfig"><i class="user icon"></i>Landlord</a>
+  <a class="ui item" href="/Report"><i class="newspaper icon"></i>Report</a>
+  <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+  <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a>
+  
+</nav>
+
+<section class="ui segment">
+
+<h2><em><a>${landlord.firstName} ${landlord.lastName}</a></em></h2> <h3> Landlord Configuration Page</h3>
+ 
+
+</section>  
+
+
+<section class="ui segment">
+
+	<div class="ui three column grid">
+		<div class="column">
+			<form action="/InputData" method="GET">
+				<div class="ui fluid form segment">
+					<button type="submit" class="ui fluid   blue submit button">Add
+						Residence</button>
+				</div>
+			</form>
+
+			<form class="ui form segment"  >
+				<div class="ui fluid selection dropdown" id="DeleteResidence">
+				  <input name="deleteEircode" type="hidden">
+					<div class="default text">Select residence to delete</div>
+					<i class="dropdown icon"></i>
+					<div class="menu">
+												<div class="item" data-value="W91 X934">W91 X934</div>
+												<div class="item" data-value="W23 X433">W23 X433</div>
+												<div class="item" data-value="V94 D922">V94 D922</div>
+												<div class="item" data-value="F92 DYY9">F92 DYY9</div>
+												<div class="item" data-value="G91 X28D">G91 X28D</div>
+												<div class="item" data-value="X92 Y433">X92 Y433</div>
+												<div class="item" data-value="R95 TDY9">R95 TDY9</div>
+												<div class="item" data-value="789u9703">789u9703</div>
+												<div class="item" data-value="A94 X439">A94 X439</div>
+												<div class="item" data-value="X91 YYX4 ">X91 YYX4 </div>
+											</div>
+				</div>
+				<div class="ui fluid form segment">
+          <button type="submit" class="ui fluid blue submit button">Delete residence</button>
+        </div>
+        <div class="ui error message"></div>
+			</form>
+
+		</div>
+		<div class="column">
+
+			<form action="/LandlordEditProfile" method="GET">
+				<div class="ui fluid form segment">
+					<button type="submit" class="ui fluid  blue submit button">Edit
+						Landlord Profile</button>
+				</div>
+			</form>
+			
+      <!-- Edit Residence -->
+			<form class="ui form segment"  >
+				<div class="ui fluid selection dropdown" id="EditResidence"  >
+				  <input name="editEircode" type="hidden">
+					<div class="default text">Edit Residence</div>
+					<i class="dropdown icon"></i>
+					<div class="menu">
+												<div class="item" data-value="W91 X934">W91 X934</div>
+												<div class="item" data-value="W23 X433">W23 X433</div>
+												<div class="item" data-value="V94 D922">V94 D922</div>
+												<div class="item" data-value="F92 DYY9">F92 DYY9</div>
+												<div class="item" data-value="G91 X28D">G91 X28D</div>
+												<div class="item" data-value="X92 Y433">X92 Y433</div>
+												<div class="item" data-value="R95 TDY9">R95 TDY9</div>
+												<div class="item" data-value="789u9703">789u9703</div>
+												<div class="item" data-value="A94 X439">A94 X439</div>
+												<div class="item" data-value="X91 YYX4 ">X91 YYX4 </div>
+											</div>
+				</div>
+				
+        <div class="ui fluid form segment">
+          <button type="submit" class="ui fluid blue submit button">Edit residence</button>
+        </div>	
+        <div class="ui error message"></div>							
+			</form>
+
+		</div>
+		
+	</div>
+</section>
+<script src="@{'/public/javascripts/landlordConfig.js'}" type="text/javascript" charset="utf-8"></script>

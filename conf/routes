@@ -17,9 +17,12 @@ POST    /register                               Landlords.register
 GET		/LandlordEditProfile					LandlordEditProfile.index
 POST    /LandlordEditProfiles                   LandlordEditProfile.changeDetails
 
+#Landlord Configuration page
+GET     /LandlordConfig							LandlordConfiguration.index
+
 
 # Tenants
-
+GET     /Tenants								Tenants.index
 GET     /Tenants/Login							Tenants.Login
 GET 	/Tenants/Logout							Tenants.Logout
 GET		/Tenants/Signup							Tenants.Signup
