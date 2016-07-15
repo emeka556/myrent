@@ -32,7 +32,7 @@ Residence(residences1):
     from: homer 
     geolocation: 53.347298,  -6.268344 
     rent: 1800 
-    rented: vacant
+    rented: rented
     residenceType: house 
     numbOfBedrooms: 5 
     area: 70 
@@ -48,18 +48,18 @@ Residence(residences2):
     numbOfBedrooms: 4 
     area: 80 
     numberBathrooms: 2 
-    postDate: Tue 11/07/16 - 02:15 PM 
+    postDate: Mon 11/07/16 - 02:15 PM 
 
 Residence(residences3): 
     from: marge 
     geolocation: 53.947298,  -6.468344 
     rent: 800 
-    rented: vacant
+    rented: rented
     residenceType: house 
     numbOfBedrooms: 3 
     area: 120 
     numberBathrooms: 2 
-    postDate: Tue 11/07/16 - 01:15 PM 
+    postDate: Tue 12/07/16 - 01:15 PM 
     
 Residence(residences4): 
     from: homer 
@@ -70,41 +70,59 @@ Residence(residences4):
     numbOfBedrooms: 6 
     area: 180 
     numberBathrooms: 4 
-    postDate: Tue 11/07/16 - 04:15 PM 
+    postDate: Tue 12/07/16 - 04:15 PM 
+
+Residence(residences5): 
+    from: marge 
+    geolocation: 53.147298,  -6.488344 
+    rent: 300 
+    rented: rented
+    residenceType: flat 
+    numbOfBedrooms: 1 
+    area: 80 
+    numberBathrooms: 1 
+    postDate: Thur 14/07/16 - 01:15 PM 
     
 Tenant(krusty):
     firstName: Krusty
     lastName: Clown
     email: krusty@clown.com
     password: secret
+    residence: residences1
 
 Tenant(klovn):
     firstName: Klovn
     lastName: Krasti
     email: klovn@krasti.com
     password: secret
+    residence: residences2
 
 Tenant(moe):
     firstName: Moe
     lastName: Szyslak
     email: moe@szyslak.com
     password: secret
-    
+    residence: residences3
+
+Tenant(barney):
+    firstName: Barney
+    lastName: Gumble
+    email: barney@gumble.com
+    password: secret  
+    residence: residences4  
+
 Tenant(ned):
     firstName: Ned
     lastName: Flander
     email: ned@flander.com
     password: secret
+    residence: residences5
     
-Tenant(barney):
-    firstName: Barney
-    lastName: Gumble
-    email: barney@gumble.com
-    password: secret
+        
 
 
 
 
 
 
-ned
+

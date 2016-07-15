@@ -22,7 +22,8 @@ public class InputData extends Controller {
 	  }
 
 	public static void index() {
-		render();
+		Landlord landlord = Landlords.getCurrentLandlord();
+		render(landlord);
 	}
 
 	public static void InputDatas(String geolocation, int rent, int numbOfBedrooms, String rented, String residenceType, int numberBathrooms, int area) {

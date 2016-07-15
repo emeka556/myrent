@@ -24,7 +24,7 @@ public class Landlord extends Model
   public List<Residence> residences = new ArrayList<>(); 
 
 
-  public Landlord(String firstName, String lastName, String email, String password, String line1Add,String line2Add,String city, String county)
+  public Landlord(String firstName, String lastName, String email, String password, String city, String county, String line1Add,String line2Add)
   {
     this.firstName = firstName;
     this.lastName  = lastName;

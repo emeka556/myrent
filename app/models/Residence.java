@@ -7,8 +7,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import play.Logger;
 import play.db.jpa.Model;
@@ -28,6 +30,11 @@ public class Residence extends Model {
 	
 	@ManyToOne
 	public Landlord from;
+	
+	
+	@OneToOne(mappedBy = "residence", cascade = CascadeType.ALL) 
+     public Tenant tenant; 
+
 	
 	public Residence (Landlord from, String geolocation, String residenceType, 
 			String rented, int numbOfBedrooms, int rent, int numberBathrooms, int area ){

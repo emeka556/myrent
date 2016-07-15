@@ -3,14 +3,15 @@
 
 <nav class="ui inverted blue menu">
   <a class="ui active item" href="/"><i class="home icon"></i>Welcome</a>
-  <a class="ui item" href="/Landlords/Signup"><i class="sign in icon"></i>Landlord</a>
-  <a class="ui item" href="/Tenants/Signup">Tenant</a> 
+  <a class="ui item" href="/Landlords/Login"><i class="large user icon"></i>Landlord</a>
+  <a class="ui item" href="/Tenants/Login"><i class="user icon"></i>Tenant</a> 
+  <a class="ui item" href="/Logout"><i class="sign out icon"></i>Logout</a> 
      
 </nav>
 
 
 <section class="ui segment">
- <h2 class="title">Welcome ${tenant.firstName} ${tenant.lastName} to MyRent</h2>
+ <h2 class="title"><em><a>${tenant.firstName} ${tenant.lastName}</a></em> : Welcome to MyRent</h2>
  <h3>Your guide to residential property</h3>
  <div class="ui two column grid">
   <div class="ten wide column">

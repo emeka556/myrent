@@ -12,6 +12,7 @@ public class Landlords extends Controller
 
   public static void index()
   {
+	
     render();
   }
 
@@ -40,7 +41,7 @@ public class Landlords extends Controller
  *method to save user information
  *firstname, lastname, email and password in database
  */
-  public static void register(String firstName, String lastName, String email, String password, String city, String county, String line1Add, String line2Add)
+  public static void register(String firstName, String lastName, String email, String password, String city, String county, String line1Add,String line2Add)
   {
     Logger.info(firstName + " " + lastName + " " + email + " " + password);
 
