@@ -18,7 +18,7 @@ import play.db.jpa.Model;
    public String lastName; 
    public String email; 
    public String password; 
-   //public String tenantReference; 
+    
     
    @OneToOne 
    public Residence residence; 
@@ -31,7 +31,7 @@ import play.db.jpa.Model;
      this.lastName  = lastName; 
      this.email     = email; 
      this.password  = password; 
-     //this.tenantReference = tenantReference; 
+     
    } 
     
    public static Tenant findByEmail(String email) 

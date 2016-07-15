@@ -9,6 +9,7 @@ import models.*;
 
 public class Landlords extends Controller
 {
+	
 
   public static void index()
   {
