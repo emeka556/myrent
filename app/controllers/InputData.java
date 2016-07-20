@@ -26,11 +26,14 @@ public class InputData extends Controller {
 		render(landlord);
 	}
 
-	public static void InputDatas(String geolocation, int rent, int numbOfBedrooms, String rented, String residenceType, int numberBathrooms, int area) {
+	public static void InputDatas(String geolocation, String eircode,  int rent, int numbOfBedrooms, String rented, String residenceType, int numberBathrooms, int area) {
 		Landlord user = Landlords.getCurrentLandlord();
-		Residence findR = new Residence (user, geolocation, residenceType, rented, numbOfBedrooms, rent, numberBathrooms, area);
+		Residence findR = new Residence (user, geolocation, eircode, residenceType, rented, numbOfBedrooms, rent, numberBathrooms, area);
 		findR.save();
 		index();
 	}
+	
+
+	
 
 }

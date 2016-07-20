@@ -32,23 +32,19 @@
 				</div>
 			</form>
 
-			<form class="ui form segment"  >
+			<form class="ui form segment" action="/LandlordResidenceDelete" method="POST">
 				<div class="ui fluid selection dropdown" id="DeleteResidence">
-				  <input name="deleteEircode" type="hidden">
+				  <input name="eircode" type="hidden">
 					<div class="default text">Select residence to delete</div>
 					<i class="dropdown icon"></i>
 					<div class="menu">
-												<div class="item" data-value="W91 X934">W91 X934</div>
-												<div class="item" data-value="W23 X433">W23 X433</div>
-												<div class="item" data-value="V94 D922">V94 D922</div>
-												<div class="item" data-value="F92 DYY9">F92 DYY9</div>
-												<div class="item" data-value="G91 X28D">G91 X28D</div>
-												<div class="item" data-value="X92 Y433">X92 Y433</div>
-												<div class="item" data-value="R95 TDY9">R95 TDY9</div>
-												<div class="item" data-value="789u9703">789u9703</div>
-												<div class="item" data-value="A94 X439">A94 X439</div>
-												<div class="item" data-value="X91 YYX4 ">X91 YYX4 </div>
-											</div>
+					
+					#{list items: allresidences, as:'res'}
+					 <div class="item" data-value="${res.eircode}"> ${res.eircode}</div>
+					 
+				   #{/list}
+
+				</div>
 				</div>
 				<div class="ui fluid form segment">
           <button type="submit" class="ui fluid blue submit button">Delete residence</button>
@@ -69,21 +65,14 @@
       <!-- Edit Residence -->
 			<form class="ui form segment"  >
 				<div class="ui fluid selection dropdown" id="EditResidence"  >
-				  <input name="editEircode" type="hidden">
+				  <input name="EditResidence" type="hidden">
 					<div class="default text">Edit Residence</div>
 					<i class="dropdown icon"></i>
 					<div class="menu">
-												<div class="item" data-value="W91 X934">W91 X934</div>
-												<div class="item" data-value="W23 X433">W23 X433</div>
-												<div class="item" data-value="V94 D922">V94 D922</div>
-												<div class="item" data-value="F92 DYY9">F92 DYY9</div>
-												<div class="item" data-value="G91 X28D">G91 X28D</div>
-												<div class="item" data-value="X92 Y433">X92 Y433</div>
-												<div class="item" data-value="R95 TDY9">R95 TDY9</div>
-												<div class="item" data-value="789u9703">789u9703</div>
-												<div class="item" data-value="A94 X439">A94 X439</div>
-												<div class="item" data-value="X91 YYX4 ">X91 YYX4 </div>
-											</div>
+									
+									
+												
+					</div>
 				</div>
 				
         <div class="ui fluid form segment">

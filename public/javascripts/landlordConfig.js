@@ -1,16 +1,16 @@
 $(document).ready(function () { 
    $('#EditResidence').dropdown();
-   $('#progress').progress();
+   
   $('#DeleteResidence').dropdown(); 
  
  
    $('.ui.form').form({ 
      fields: { 
-       DeleteResidence: { 
-         identifier: 'DeleteResidence', 
+    	 eircode: { 
+         identifier: 'eircode', 
          rules: [{ 
            type: 'empty', 
-           prompt: 'Select residence to delete', 
+           prompt: 'Please Select from the dropdown residence to delete', 
          },], 
        }, 
  

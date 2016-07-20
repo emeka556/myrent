@@ -23,12 +23,28 @@
     <h2><em><a>${landlord.firstName} ${landlord.lastName}</a></em></h2> <h3> Please input residence data</h3>
     <div class="ui two column grid">
       <div class="column">
-        <div class="ui fluid form segment">         
+        <div class="ui fluid form segment"> 
+        
+               
           <label>Location </label> 
           <input type="text" id="geolocation" name="geolocation" value="53.347298,  -6.268344" readonly class="input-medium">            
           <div class="ui input">
             
           </div>               
+        
+        </div>
+         
+         <div class="column">
+            
+            
+              <div class="ui fluid labeled input">
+                <div class="ui label">
+                  Eircode
+                </div>   
+                <input value="X92 Y433" id="eircode" name="eircode"  type="text">
+             </div>
+          
+         
         </div>
          
         <div class="ui fluid form segment">
@@ -132,8 +148,7 @@
       
       </div>  
       
-      
-               
+           
       
             <div class="column">
         <div class="ui raised fluid form segment">

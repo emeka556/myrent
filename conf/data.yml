@@ -28,9 +28,10 @@ Landlord(bart):
     line1Add: 10 springfield avenue
     line2Add: springfield park
   
-Residence(residences1): 
+Residence(residence1): 
     from: homer 
-    geolocation: 53.347298,  -6.268344 
+    geolocation: 53.347298,  -6.268344
+    eircode: W91 X934
     rent: 1800 
     rented: rented
     residenceType: house 
@@ -39,9 +40,10 @@ Residence(residences1):
     numberBathrooms: 3 
     postDate: Mon 11/07/16 - 01:15 PM 
     
-Residence(residences2): 
+Residence(residence2): 
     from: bart 
     geolocation: 53.146264,  -6.268344 
+    eircode: W23 X433
     rent: 1000 
     rented: rented
     residenceType: house 
@@ -50,9 +52,10 @@ Residence(residences2):
     numberBathrooms: 2 
     postDate: Mon 11/07/16 - 02:15 PM 
 
-Residence(residences3): 
+Residence(residence3): 
     from: marge 
     geolocation: 53.947298,  -6.468344 
+    eircode: V94 D922
     rent: 800 
     rented: rented
     residenceType: house 
@@ -61,9 +64,10 @@ Residence(residences3):
     numberBathrooms: 2 
     postDate: Tue 12/07/16 - 01:15 PM 
     
-Residence(residences4): 
+Residence(residence4): 
     from: homer 
     geolocation: 53.446274,  -6.368344 
+    eircode: F92 DYY9
     rent: 2000 
     rented: rented
     residenceType: house 
@@ -72,9 +76,10 @@ Residence(residences4):
     numberBathrooms: 4 
     postDate: Tue 12/07/16 - 04:15 PM 
 
-Residence(residences5): 
+Residence(residence5): 
     from: marge 
-    geolocation: 53.147298,  -6.488344 
+    geolocation: 53.147298,  -6.488344
+    eircode: G91 X28D
     rent: 300 
     rented: rented
     residenceType: flat 
@@ -83,40 +88,64 @@ Residence(residences5):
     numberBathrooms: 1 
     postDate: Thur 14/07/16 - 01:15 PM 
     
+Residence(residence6): 
+    from: homer 
+    geolocation: 53.123443,  -6.123454
+    eircode: X91 E659
+    rent: 1000 
+    rented: rented
+    residenceType: house 
+    numbOfBedrooms: 5 
+    area: 70 
+    numberBathrooms: 3 
+    postDate: Mon 18/07/16 - 01:15 PM 
+    
+Residence(residence7): 
+    from: homer 
+    geolocation: 53.323344,  -6.256667
+    eircode: X91 YYX4
+    rent: 800 
+    rented: rented
+    residenceType: house 
+    numbOfBedrooms: 3 
+    area: 70 
+    numberBathrooms: 2
+    postDate: Tue 19/07/16 - 01:15 PM 
+    
 Tenant(krusty):
     firstName: Krusty
     lastName: Clown
     email: krusty@clown.com
     password: secret
-    residence: residences1
+    residence: residence1
 
 Tenant(klovn):
     firstName: Klovn
     lastName: Krasti
     email: klovn@krasti.com
     password: secret
-    residence: residences2
+    residence: residence2
 
 Tenant(moe):
     firstName: Moe
     lastName: Szyslak
     email: moe@szyslak.com
     password: secret
-    residence: residences3
+    residence: residence3
 
 Tenant(barney):
     firstName: Barney
     lastName: Gumble
     email: barney@gumble.com
     password: secret  
-    residence: residences4  
+    residence: residence4  
 
 Tenant(ned):
     firstName: Ned
     lastName: Flander
     email: ned@flander.com
     password: secret
-    residence: residences5
+    residence: residence5
     
         
 

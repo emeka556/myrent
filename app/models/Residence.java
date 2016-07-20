@@ -27,6 +27,7 @@ public class Residence extends Model {
 	public int numbOfBedrooms;
 	public int numberBathrooms;
 	public int area; // the area of the residence in square metres
+	public String eircode;
 	
 	@ManyToOne
 	public Landlord from;
@@ -36,17 +37,19 @@ public class Residence extends Model {
      public Tenant tenant; 
 
 	
-	public Residence (Landlord from, String geolocation, String residenceType, 
+	public Residence (Landlord from, String geolocation, String eircode, String residenceType, 
 			String rented, int numbOfBedrooms, int rent, int numberBathrooms, int area ){
 		
 		this.from = from;
 		this.geolocation = geolocation;
+		this.eircode = eircode;
 		this.residenceType = residenceType;
 		this.rented = rented;
 		this.rent = rent;
 		this.numbOfBedrooms = numbOfBedrooms;
 		this.numberBathrooms = numberBathrooms;
 		this.area = area;
+		
 			postDate = dateValidator();
 	}
 
@@ -57,4 +60,18 @@ public class Residence extends Model {
 		Logger.info("Date Created On " + createOn + " postDate " + dformat.format(createOn));
 		return dformat.format(createOn);
 }
+
+	public static Residence findByEircode(String eircode)
+	{
+		return find("eircode" , eircode).first();
+	}
+	
+	public static Residence findByGeolocation(String geolocation)
+	{
+		return find("geolocation" , geolocation).first();
+	}
+	
+	
+
+	
 }

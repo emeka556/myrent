@@ -21,7 +21,7 @@ public class Landlord extends Model
   public String line2Add;
   
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL) 
-  public List<Residence> residences = new ArrayList<>(); 
+  public List<Residence> residence = new ArrayList<>(); 
 
 
   public Landlord(String firstName, String lastName, String email, String password, String city, String county, String line1Add,String line2Add)

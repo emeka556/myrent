@@ -1,7 +1,5 @@
 package controllers;
 
-import models.Landlord;
-import models.Residence;
 import play.mvc.Before;
 import play.*;
 import play.mvc.*;
@@ -26,8 +24,41 @@ public class LandlordConfiguration extends Controller {
 
 	public static void index() {
 		Landlord landlord = Landlords.getCurrentLandlord();
-		render("Landlords/landlordconfig.html",landlord);
+		List<Residence> residences = Residence.findAll();
+		List<Residence> allresidences = new ArrayList<Residence>();
+		for(Residence res :residences){
+			if(landlord.equals(res.from)){
+				allresidences.add(res);
+			}
+		}
+		render("Landlords/landlordconfig.html",landlord, allresidences);
 	}
+	
+	public static void residenceDelete(String eircode) 
+	   { 
+		//Landlord landlord = Landlord.findById(Long.parseLong(userId));
+		Landlord landlord = Landlords.getCurrentLandlord();
+		
+		
+		 Residence residence = Residence.findByEircode(eircode);
+
+		 Logger.info("Residence with eircode " + eircode  + " has been removed" ); //returning null
+
+		 landlord.residence.remove(eircode);  //removing the certain geolocation from the list.
+		
+		 //Residence residence = Residence.findById(DeleteResidence);
+	    
+		//removing from the database and saving user.
+		landlord.save(); 
+	    residence.delete(); 
+	    index(); 
+	  } 
+	
+	
+	
+	
+
+
 
 	
 }
