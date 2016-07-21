@@ -33,7 +33,6 @@ public class InputData extends Controller {
 		index();
 	}
 	
-
 	
 
 }

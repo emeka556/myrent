@@ -1,0 +1,51 @@
+#{extends 'main.html' /} #{set title:'Landlord Residence Edit to myrent' /}
+
+<nav class="ui inverted blue menu">
+	<a class="ui item" href="/">Home</a>
+	
+	<input type="button" class="ui blue submit button" value="Landlord" onClick="history.go(0);return true;"></input>
+  
+  <a class="ui item" href="/landlords/logout"><i class="sign out icon"></i>Logout</a>
+
+</nav>
+
+<section class="ui segment">
+	<form class="ui form" action="/Update" method="POST">
+	<!-- <form class="ui form"> -->
+		<h4>Please update residence data</h4>
+		<div class="ui one column grid">
+			<div class="column">
+				<!--   The monthly rent  -->
+				<div class="ui three column grid">
+				  <div class="column">
+            <div class="ui form segment">
+              <div class="ui fluid labeled input">
+                <div class="ui label">Eircode</div>
+                
+                <input readonly value="${residence.eircode}" type="text" name="eircode">
+              </div>
+            </div>
+          </div>
+					<div class="column">
+						<div class="ui form segment">
+							<div class="ui fluid labeled input">
+								<div class="ui label">Monthly rent (&euro;)</div>
+								<input placeholder="${residence.rent}" type="text" name="rent" required>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-actions">
+					 <button type="submit" class="ui blue submit button">Update data</button>
+					
+<!-- 					<div class="ui error message"></div> -->
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+
+
+ 

@@ -6,17 +6,18 @@ $(document).ready(function () {
  
    $('.ui.form').form({ 
      fields: { 
-    	 eircode: { 
+    	 DeleteResidence: { 
          identifier: 'eircode', 
          rules: [{ 
            type: 'empty', 
-           prompt: 'Please Select from the dropdown residence to delete', 
+           prompt: 'Please Select from the dropdown', 
          },], 
        }, 
+       
  
 
        EditResidence: { 
-         identifier: 'EditResidence', 
+         identifier: 'eircode1', 
          rules: [{ 
            type: 'empty', 
            prompt: 'Select residence to edit ', 

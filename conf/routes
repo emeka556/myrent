@@ -19,8 +19,10 @@ POST    /LandlordEditProfiles                   LandlordEditProfile.changeDetail
 
 #Landlord Configuration page
 GET     /LandlordConfig							LandlordConfiguration.index
+GET     /LandlordEditResidence					LandlordConfiguration.residenceEdit
 POST    /LandlordResidenceDelete				LandlordConfiguration.residenceDelete
-
+POST 	/LandlordEditResidence                  LandlordConfiguration.residenceEdit
+POST    /Update									LandlordConfiguration.UpdateResidence
 
 # Tenants 
 GET     /Tenants								Tenants.index
@@ -35,7 +37,7 @@ POST    /Tenants/register                       Tenants.register
 # InputData
 GET     /InputData								InputData.index
 POST    /InputDatas								InputData.InputDatas
-POST	/InputData/UpdateResidence/{id}  		InputData.UpdateResidence
+
 
 # Report
 GET		/Report			    					Report.index
