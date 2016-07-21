@@ -20,8 +20,7 @@ import play.db.jpa.Model;
    public String password; 
     
     
-   @OneToOne 
-   public Residence residence; 
+   
    
   
    

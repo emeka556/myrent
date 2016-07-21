@@ -33,8 +33,7 @@ public class Residence extends Model {
 	public Landlord from;
 	
 	
-	@OneToOne(mappedBy = "residence", cascade = CascadeType.ALL) 
-     public Tenant tenant; 
+	
 
 	
 	public Residence (Landlord from, String geolocation, String eircode, String residenceType, 

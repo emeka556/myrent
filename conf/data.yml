@@ -117,35 +117,35 @@ Tenant(krusty):
     lastName: Clown
     email: krusty@clown.com
     password: secret
-    residence: residence1
+   
 
 Tenant(klovn):
     firstName: Klovn
     lastName: Krasti
     email: klovn@krasti.com
     password: secret
-    residence: residence2
+    
 
 Tenant(moe):
     firstName: Moe
     lastName: Szyslak
     email: moe@szyslak.com
     password: secret
-    residence: residence3
+   
 
 Tenant(barney):
     firstName: Barney
     lastName: Gumble
     email: barney@gumble.com
     password: secret  
-    residence: residence4  
+     
 
 Tenant(ned):
     firstName: Ned
     lastName: Flander
     email: ned@flander.com
     password: secret
-    residence: residence5
+    
     
         
 
