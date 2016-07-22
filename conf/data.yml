@@ -37,7 +37,6 @@ Residence(residence1):
     geolocation: 53.347298,  -6.268344
     eircode: W91 X934
     rent: 1800 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 5 
     area: 70 
@@ -50,7 +49,6 @@ Residence(residence2):
     geolocation: 53.146264,  -6.268344 
     eircode: W23 X433
     rent: 1000 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 4 
     area: 80 
@@ -63,7 +61,6 @@ Residence(residence3):
     geolocation: 53.947298,  -6.468344 
     eircode: V94 D922
     rent: 800 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 3 
     area: 120 
@@ -76,7 +73,6 @@ Residence(residence4):
     geolocation: 53.446274,  -6.368344 
     eircode: F92 DYY9
     rent: 2000 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 6 
     area: 180 
@@ -89,7 +85,6 @@ Residence(residence5):
     geolocation: 53.147298,  -6.488344
     eircode: G91 X28D
     rent: 300 
-    rented: rented
     residenceType: flat 
     numbOfBedrooms: 1 
     area: 80 
@@ -101,7 +96,6 @@ Residence(residence6):
     geolocation: 53.123443,  -6.123454
     eircode: X91 E659
     rent: 1000 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 5 
     area: 70 
@@ -113,7 +107,6 @@ Residence(residence7):
     geolocation: 53.323344,  -6.256667
     eircode: X91 YYX4
     rent: 800 
-    rented: rented
     residenceType: house 
     numbOfBedrooms: 3 
     area: 70 

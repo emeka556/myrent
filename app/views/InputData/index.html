@@ -21,9 +21,16 @@
 <section class="ui segment">      
   <form class="ui form" action="/InputDatas" method="POST">
     <h2><em><a>${landlord.firstName} ${landlord.lastName}</a></em></h2> <h3> Please input residence data</h3>
+    
+    
+    
     <div class="ui two column grid">
-      <div class="column">
-        <div class="ui fluid form segment"> 
+    <div class="column">
+    <div class="ui fluid form segment">
+       <div class="ui raised segment">
+      
+        
+        <div class="two fields">
         
                
           <label>Location </label> 
@@ -31,42 +38,26 @@
           <div class="ui input">
             
           </div>               
-        
-        </div>
-         
-         <div class="column">
-            
-            
-              <div class="ui fluid labeled input">
+        </div>  
+        </div>  
+       <div class="column">
+            <div class="ui fluid form segment">
+              
+              <div class="ui labeled input">
                 <div class="ui label">
                   Eircode
                 </div>   
                 <input value="X92 Y433" id="eircode" name="eircode"  type="text">
              </div>
+                </div>
+                 </div>
+                  
+                   </div>
           
-         
-        </div>
-         
-        <div class="ui fluid form segment">
-          
-				  <div class="ui form">			
-				    <div class="grouped inline fields">
-				      <div class="field">
-				        <div class="ui radio checkbox">
-				          <input id = "rented" name="rented" checked="checked" value="rented" type="radio">
-				          <label>Rented</label>
-				        </div>
-				      </div>
-				      <div class="field">
-				        <div class="ui radio checkbox">
-				          <input id = "rented" name="rented" type="radio" value="vacant">
-				          <label>Vacant</label>
-				        </div>
-				      </div>
-				
-				    </div>
-				  </div>					  			  
-        </div>
+        
+        
+        
+        
             <div class="ui two column grid">
           <div class="column">
 		        <div class="ui fluid form segment">
@@ -92,6 +83,9 @@
             </div>
           </div>
         </div>   
+        
+        
+        
         
           <div class="ui two column grid">
           <div class="column">
