@@ -18,7 +18,7 @@ import play.db.jpa.Model;
 @Entity
 public class Residence extends Model {
 
-	public String rented; //rented or vacant
+	
 	public String geolocation;
 	public String postDate;
 	public String residenceType;
@@ -38,13 +38,13 @@ public class Residence extends Model {
 
 	
 	public Residence (Landlord from, String geolocation, String eircode, String residenceType, 
-			String rented, int numbOfBedrooms, int rent, int numberBathrooms, int area ){
+			 int numbOfBedrooms, int rent, int numberBathrooms, int area ){
 		
 		this.from = from;
 		this.geolocation = geolocation;
 		this.eircode = eircode;
 		this.residenceType = residenceType;
-		this.rented = rented;
+		
 		this.rent = rent;
 		this.numbOfBedrooms = numbOfBedrooms;
 		this.numberBathrooms = numberBathrooms;
