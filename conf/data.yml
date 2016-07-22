@@ -7,6 +7,7 @@ Landlord(homer):
     county: New Jersey
     line1Add: 10 springfield avenue
     line2Add: springfield park
+    residence: [residence1, residence4, residence6, residence7]
     
 Landlord(marge):
     firstName: Marge
@@ -17,6 +18,7 @@ Landlord(marge):
     county: New Jersey
     line1Add: 10 springfield avenue
     line2Add: springfield park
+    residence: [residence3, residence5]
  
 Landlord(bart):
     firstName: Bart
@@ -27,9 +29,11 @@ Landlord(bart):
     county: New Jersey
     line1Add: 10 springfield avenue
     line2Add: springfield park
+    residence: [residence2]
   
 Residence(residence1): 
     from: homer 
+    tenant: krusty
     geolocation: 53.347298,  -6.268344
     eircode: W91 X934
     rent: 1800 
@@ -42,6 +46,7 @@ Residence(residence1):
     
 Residence(residence2): 
     from: bart 
+    tenant: klovn
     geolocation: 53.146264,  -6.268344 
     eircode: W23 X433
     rent: 1000 
@@ -54,6 +59,7 @@ Residence(residence2):
 
 Residence(residence3): 
     from: marge 
+    tenant: moe
     geolocation: 53.947298,  -6.468344 
     eircode: V94 D922
     rent: 800 
@@ -66,6 +72,7 @@ Residence(residence3):
     
 Residence(residence4): 
     from: homer 
+    tenant: barney
     geolocation: 53.446274,  -6.368344 
     eircode: F92 DYY9
     rent: 2000 
@@ -78,6 +85,7 @@ Residence(residence4):
 
 Residence(residence5): 
     from: marge 
+    tenant: ned
     geolocation: 53.147298,  -6.488344
     eircode: G91 X28D
     rent: 300 
