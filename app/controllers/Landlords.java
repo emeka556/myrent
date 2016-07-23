@@ -35,8 +35,10 @@ public class Landlords extends Controller
  */
   public static void Logout()
   {
-    session.clear();
-	  //set    TOdo
+		//Landlord landlord = getCurrentLandlord();
+		//Tenant tenant = Tenants.getCurrentTenant();
+		
+	session.remove("logg_in_LandlordID");
     Welcome.index();
     
   }
