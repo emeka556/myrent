@@ -27,6 +27,7 @@ public class Landlords extends Controller
    */
   public static void Login()
   {
+	session.clear();
     render("Landlords/login.html");
   }
 /**
@@ -35,6 +36,7 @@ public class Landlords extends Controller
   public static void Logout()
   {
     session.clear();
+	  //set    TOdo
     Welcome.index();
     
   }
@@ -64,7 +66,7 @@ public class Landlords extends Controller
     if ((landlord != null) && (landlord.checkPassword(password) == true))
     {
       Logger.info("Successful authentication of  " + landlord.firstName + " " + landlord.lastName + " ");
-      session.put("logged_in_userid", landlord.id);
+      session.put("logg_in_LandlordID", landlord.id);
       LandlordConfiguration.index();
     }
     else
@@ -73,10 +75,25 @@ public class Landlords extends Controller
       Login();
     }
   }
+  public static Landlord getLoginLandlord()
+  {
+    Landlord landlord = null;
+    if (session.get("logg_in_LandlordID") != null)
+    {
+      String userId = session.get("logg_in_LandlordID");
+      landlord = Landlord.findById(Long.parseLong(userId));
+      
+    }
+    else
+    {
+      Welcome.index();
+    }
+    return landlord;
+  }
 
   public static Landlord getCurrentLandlord()
   {
-    String userId = session.get("logged_in_userid");
+    String userId = session.get("logg_in_LandlordID");
     if (userId == null)
     {
       return null;

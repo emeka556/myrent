@@ -16,11 +16,12 @@ public class LandlordConfiguration extends Controller {
 	 */
 	@Before
 	static void checkAuthentification() {
-		if (session.contains("logged_in_userid") == false)
+		if (session.contains("logg_in_LandlordID") == false)
 			Landlords.Login();
 	}
 
 	public static void index() {
+		Landlord clandlord = Landlords.getLoginLandlord();
 		Landlord landlord = Landlords.getCurrentLandlord();
 		List<Residence> residences = Residence.findAll();
 		List<Residence> allresidences = new ArrayList<Residence>();
@@ -29,7 +30,7 @@ public class LandlordConfiguration extends Controller {
 				allresidences.add(res);
 			}
 		}
-		render("Landlords/landlordconfig.html", landlord, allresidences);
+		render("Landlords/landlordconfig.html", landlord, allresidences, clandlord);
 	}
 
 	public static void residenceDelete(String eircode) {
@@ -50,19 +51,13 @@ public class LandlordConfiguration extends Controller {
 	public static void residenceEdit(String eircode , int rent)
 	  {
 		 
-		 Landlord landlord = Landlords.getCurrentLandlord();
+		 
 		 
 	    Residence residence = Residence.findByEircode(eircode);
-	    List<Residence> residences = Residence.findAll();
-		List<Residence> allresidences = new ArrayList<Residence>();
-		for (Residence res : residences) {
-			if (landlord.equals(res.from)) {
-				allresidences.add(res);
-			}
-		}
+	    
 		
 	    
-	    render("Landlords/landlordeditresidence.html",landlord, residence, allresidences);
+	    render("Landlords/landlordeditresidence.html", residence);
 	  }
 	
 	public static void UpdateResidence(String eircode, int rent) 

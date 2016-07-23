@@ -15,13 +15,31 @@ public class Tenants extends Controller {
 		
 		
 		
-		 if(session.contains("logged_in_userid") == false)
-		      Tenants.Login();
-		 else {
-			 Tenant tenant = Tenants.getCurrentTenant();
-				render(tenant);
+		Tenant tenant = Tenants.getLoginTenant();
+	   
+	   
+	    List<Tenant> allTenants = new ArrayList();
+	    allTenants = Tenant.findAll();
+	   
+	    {
+	      if ((session.contains("logg_in_TenantID") == false))
+	      { 
+	    	 Tenants.Login();
+	        
+	      }
+	      else
+	      {
+	    	  Tenant currentTenant = Tenants.getCurrentTenant();
 				
-			}
+	  	    
+
+	  	    render(tenant, allTenants, currentTenant);
+	        
+	       
+	      }
+	    }
+	    
+	    
 	}
 
 	public static void Signup() {
@@ -34,6 +52,7 @@ public class Tenants extends Controller {
 	 * renders login
 	 */
 	public static void Login() {
+		session.clear(); //clears any user that is logged in
 		render("Tenants/login.html");
 	}
 
@@ -70,16 +89,33 @@ public class Tenants extends Controller {
 		Tenant tenant = Tenant.findByEmail(email);
 		if ((tenant != null) && (tenant.checkPassword(password) == true)) {
 			Logger.info("Successful authentication of  " + tenant.firstName + " " + tenant.lastName + " ");
-			session.put("logged_in_userid", tenant.id);
+			session.put("logg_in_TenantID", tenant.id);
 			Tenants.index();
 		} else {
 			Logger.info("Authentication failed");
 			Login();
 		}
 	}
+	
+	public static Tenant getLoginTenant()
+	  {
+	    Tenant tenant = null;
+	    if (session.get("logg_in_TenantID") != null)
+	    {
+	      String userId = session.get("logg_in_TenantID");
+	      tenant = Tenant.findById(Long.parseLong(userId));
+	      
+	    }
+	    else
+	    {
+	      Welcome.index();
+	    }
+	    return tenant;
+	  }
+
 
 	public static Tenant getCurrentTenant() {
-		String userId = session.get("logged_in_userid");
+		String userId = session.get("logg_in_TenantID");
 		if (userId == null) {
 			return null;
 		}

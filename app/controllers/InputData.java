@@ -16,7 +16,7 @@ public class InputData extends Controller {
 	 */
 	@Before
 	static void checkAuthentification() {
-		if (session.contains("logged_in_userid") == false)
+		if (session.contains("logg_in_LandlordID") == false)
 			Landlords.Login();
 	}
 
