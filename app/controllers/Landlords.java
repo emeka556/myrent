@@ -39,7 +39,10 @@ public class Landlords extends Controller
 		//Tenant tenant = Tenants.getCurrentTenant();
 		
 	session.remove("logg_in_LandlordID");
+	
     Welcome.index();
+    
+    
     
   }
 /**
@@ -53,7 +56,6 @@ public class Landlords extends Controller
     Landlord landlord = new Landlord(firstName, lastName, email, password , city, county, line1Add, line2Add);
 
     
-
     landlord.save();
     Login();
     
