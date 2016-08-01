@@ -29,8 +29,11 @@ GET     /Tenants								Tenants.index
 GET     /Tenants/Login							Tenants.Login
 GET 	/Tenants/Logout							Tenants.Logout
 GET		/Tenants/Signup							Tenants.Signup
+GET     /Tenants/tenant							TenantData.index
 POST    /Tenants/authenticate                   Tenants.authenticate
 POST    /Tenants/register                       Tenants.register
+POST    /Tenants/terminatedRes                  TenantData.tenancyTerminate
+POST    /Tenants/newTenancy						TenantData.changeTenancy
 
 
 
@@ -41,7 +44,9 @@ POST    /InputDatas								InputData.InputDatas
 
 # Report
 GET		/Report			    					Report.index
+
 POST    /generateReport							Report.generateReport
+POST    /TenancyReport							Report.TenancyReport
 
 # Contact
 GET 	/Contact								Contact.index

@@ -22,7 +22,7 @@ public class Tenants extends Controller {
 	    allTenants = Tenant.findAll();
 	   
 	    {
-	      if ((session.contains("logg_in_TenantID") == false))
+	      if (session.contains("logg_in_TenantID") == false)
 	      { 
 	    	 Tenants.Login();
 	        
@@ -93,7 +93,7 @@ public class Tenants extends Controller {
 		if ((tenant != null) && (tenant.checkPassword(password) == true)) {
 			Logger.info("Successful authentication of  " + tenant.firstName + " " + tenant.lastName + " ");
 			session.put("logg_in_TenantID", tenant.id);
-			Tenants.index();
+			TenantData.index();
 		} else {
 			Logger.info("Authentication failed");
 			Login();

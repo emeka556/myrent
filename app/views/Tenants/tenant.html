@@ -1,0 +1,86 @@
+#{extends 'main.html' /} #{set title:'Tenant Page' /} 
+
+
+
+
+<nav class="ui inverted blue menu">
+  <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
+  <a class="ui active item" href="/Tenants/tenant"><i class="user icon"></i>Tenant</a> 
+  <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+  <a class="ui item" href="/Tenants/Logout"><i class="sign out icon"></i>Logout</a> 
+</nav>
+
+<section class="ui segment">
+  <div class="ui three column grid">
+    <div class="column">
+      <section class="ui segment">
+            <h2><em><a>${tnant.firstName} ${tnant.lastName}</a></em></h2>
+             <h3>Existing rental (eircode)</h3> 
+            <div class="ui form segment">
+            <div class="ui fluid labeled input">
+            <div class="ui label">Eircode</div>
+              
+               
+                <input readonly value="${Tenant_eircode}" type="text" name="eircode">
+              </div>
+            </div>
+      </section>
+
+      <section class="ui segment">
+        <h3>Press to end tenancy</h3>
+        <form class="ui form"    action="/Tenants/terminatedRes" method="POST">
+          <div class="ui fluid form segment">           
+            <!-- Terminate a tenancy -->
+            
+            
+            <button type="submit" class="ui blue fluid submit button">Terminate tenancy</button>
+          </div>
+        </form>
+      </section>
+
+
+     <form class="ui form segment" action="/Tenants/newTenancy" method="POST">
+				<h3>Select from vacant residences for new rentals:</h3>
+				<section class="ui segment">
+					<select class="ui fluid dropdown newTenancy" name="newResidence" required>
+						<option value="" selected>Vacant Residences</option>
+						<div class="ui list">
+						#{list items: allresidences, as: 'res'}
+						<option value="${res.id}"> Amount: ${res.rent},  Eircode:&{res.eircode}</option>
+						#{/list}
+						</div>
+						
+					</select>
+				</section>
+				
+				<section>
+				<button class="ui fluid blue submitt button">Change tenancy</button>
+			</form>
+
+		</div>
+		
+		  <div class="ui ten wide column">
+		       
+      <form class="ui form segment" action="/TenancyReport" method="POST">
+        <div id="map_canvas"></div>
+    
+         <button type="submit" class="ui fluid blue submit button"
+          onclick="requestReport()">Search for Vacant Residences</button>
+        
+        <div style="visibility: hidden" name="circledata" id="circledata">
+          <input type="text" id="radius" name="radius"> 
+          <input type="text" id="latcenter" name="latcenter"> 
+          <input type="text" id="lngcenter" name="lngcenter">
+        </div>
+       
+      </form>
+   	  
+		  </div>
+
+	</div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyBtlVC_sNyT5CcqdDpnCfQPannxflgWHKQ"></script>
+<script src="/public/javascripts/ReportmapTenant.js" type="text/javascript" charset="utf-8"></script>
+
+     

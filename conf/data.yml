@@ -93,7 +93,7 @@ Residence(residence5):
     
 Residence(residence6): 
     from: homer 
-    geolocation: 53.123443,  -6.123454
+    geolocation: 52.223443,  -7.123454
     eircode: X91 E659
     rent: 1000 
     residenceType: house 
@@ -104,7 +104,7 @@ Residence(residence6):
     
 Residence(residence7): 
     from: homer 
-    geolocation: 53.323344,  -6.256667
+    geolocation: 52.223344,  -7.256667
     eircode: X91 YYX4
     rent: 800 
     residenceType: house 
@@ -118,35 +118,35 @@ Tenant(krusty):
     lastName: Clown
     email: krusty@clown.com
     password: secret
-    residence: residence1
+    residence: [residence1]
 
 Tenant(klovn):
     firstName: Klovn
     lastName: Krasti
     email: klovn@krasti.com
     password: secret
-    residence: residence2
+    residence: [residence2]
 
 Tenant(moe):
     firstName: Moe
     lastName: Szyslak
     email: moe@szyslak.com
     password: secret
-    residence: residence3
+    residence: [residence3]
 
 Tenant(barney):
     firstName: Barney
     lastName: Gumble
     email: barney@gumble.com
     password: secret  
-    residence: residence4  
+    residence: [residence4]  
 
 Tenant(ned):
     firstName: Ned
     lastName: Flander
     email: ned@flander.com
     password: secret
-    residence: residence5
+    residence: [residence5]
     
         
 
