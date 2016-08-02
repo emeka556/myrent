@@ -5,6 +5,13 @@
 # Home Page
 GET     /   									Welcome.index
 
+# Administration
+GET      /Administrator/Login                    Administrators.Login
+GET      /Administrator/Logout                   Administrators.Logout
+POST     /authenticate              	         Administrators.authenticate
+GET      /adminConfig  	                         Administrators.adminConfig
+
+
 # Landlords
 GET     /Login									Landlords.Login
 GET 	/Logout									Landlords.Logout
