@@ -1,5 +1,3 @@
-$('.ui.dropdown.newTenancy').dropdown('clear')
-
 let latlong = [];
 var map;
 const markers = [];
@@ -8,37 +6,23 @@ function initialize()
 {
 	retrieveMarkerLocations();
 	
-    var center =new google.maps.LatLng(52.347298,-7.268344);
-    var initRadius = 5000;
-    const mapProp = {
+    var center =new google.maps.LatLng(53.347298,-6.268344);
+    var initRadius = 10000;
+    var mapProp = {
             center:center,
-            zoom: 7,
-            zoomControl: true,
+            zoom:7,
             mapTypeId:google.maps.MapTypeId.ROADMAP
-            
     };
     
     
-    var mapDiv = document.getElementById("googleMap");
+    var mapDiv = document.getElementById("map_canvas");
     
     mapDiv.style.width = '100%';
     mapDiv.style.height = '500px';
     
       map = new google.maps.Map(mapDiv,mapProp);
    
-
-        circle = new google.maps.Circle({
-        center:center,
-        radius:initRadius,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.4,
-        strokeWeight:1,
-        fillColor:"#0000FF",
-        fillOpacity:0.4,
-        draggable: true
-        });
-    circle.setEditable(true);//allows varying radius be dragging anchor point
-    circle.setMap(map);
+      
 }
 
 /**
@@ -53,7 +37,7 @@ function initialize()
 function retrieveMarkerLocations()
 {
   $(function() {
-    $.get("/Tenants/retrieveVacantCord", function(data) {
+    $.get("/Administrations/getCordinates", function(data) {
       $.each(data, function(index, geoObj) {
         console.log(geoObj[0] + " " + geoObj[1] + " " + geoObj[2] + " " + geoObj[3] + " " + geoObj[4]);
     });

@@ -92,6 +92,29 @@ public class Administrators extends Controller {
 		Logger.info("Logged in Admin: " + logged_in_admin.email);
 		return logged_in_admin;
 	}
+	
+	public static void getCordinates() {
+		int flag = 0;
+		List<Residence> Residences = Residence.findAll();
+		List<List<String>> Array_json = new ArrayList<List<String>>();
+
+		for (Residence res : Residences) {
+
+			String ID = Long.toString(res.id);
+			String lon = Double.toString(res.RetrieveGeolocation().getLongitude());
+			String lat = Double.toString(res.RetrieveGeolocation().getLatitude());
+			String Nameoftenant = (res.tenant == null) ?   "no tenant yet" : res.tenant.firstName;			
+			String Eircode = res.eircode;
+
+			Array_json.add(flag,
+					Arrays.asList(ID, lat, lon, Nameoftenant, Eircode));
+			flag++;
+		}
+
+		renderJSON(Array_json);
+
+	}
+
 
 
 }

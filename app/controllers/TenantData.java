@@ -110,32 +110,7 @@ public class TenantData extends Controller {
 		index();
 	}
 
-	public static void retrieveVacantCord() {
-		//int flag = 0;
-		List<Residence> allResidences = Residence.findAll();
-		List<List<String>> Arrayjson = new ArrayList<List<String>>();
-
-		for (Residence res : allResidences) {
-
-			if (res.tenant == null) {
-				ArrayList<String> str = new ArrayList<String>();
-				str.add(res.eircode);
-				str.add(Double.toString(res.RetrieveGeolocation().getLatitude()));
-				str.add(Double.toString(res.RetrieveGeolocation().getLongitude()));
-				
-				
-				
-				str.add("Vacant Residence");
-				Arrayjson.add(str);
-				Logger.info("Vacant Residence",  res.eircode);
-
-				
-				}
-			}
-			renderJSON(Arrayjson);
-
-		
-	}
+	
 
 }
 

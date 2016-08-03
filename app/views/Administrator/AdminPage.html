@@ -1,9 +1,10 @@
 #{extends 'main.html' /} #{set title:'Login to AdminPage' /}
 
 
+
  <nav class="ui inverted blue menu">
     <a class="ui item" href="/">Home</a>
-    <a class="ui active item" href="/administrators">Administrator</a>
+    <a class="ui active item" href="/adminpage ">Administrator</a>
     
    <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
     <a class="ui item" href="/Administrator/Logout ">Log out</a>
@@ -15,7 +16,7 @@
 	<div class="ui raised container segment">
 
 		<div class="ui grid segment">
-			<div class="ui seven wide column">
+			<div class="ui six wide column">
 				<h2>Administration page:</h2>
 				<h3>Register landlords and tenants</h3>
 				<section class="ui segment">
@@ -28,18 +29,33 @@
 				
 				
 								
+				</section>
+				
+				
+				
 				
 			</div>
-			<div class="ui nine wide column">
+			<div class="ui ten wide column">
 				<section class="ui segment">
-					<div id="map_canvas"></div>
+					<div id="googleMap" style="width:500px;height:380px;"></div>
 
-				
+				</section>
 			</div>
 
-		</div>
+		
 	</div>
 </section>
+    
+       
+        
+        
+      </form>
+   	  
+
+				
+
+		
+</section>
 <script
-	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyBtlVC_sNyT5CcqdDpnCfQPannxflgWHKQ"></script>
-<script src="/public/javascripts/adminMap.js"></script>
+src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC6BW4KWCicIlG69d_Q-qjZCXyvtzEQn6M"></script>
+<script src="@{'/public/javascripts/adminMap.js'}" type="text/javascript" charset="utf-8"></script>

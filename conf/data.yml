@@ -108,7 +108,7 @@ Residence(residence6):
     
 Residence(residence7): 
     from: homer 
-    geolocation: 52.223344,  -7.256667
+    geolocation: 52.223344,  -6.56667
     eircode: X91 YYX4
     rent: 800 
     residenceType: house 

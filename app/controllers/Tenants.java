@@ -131,5 +131,33 @@ public class Tenants extends Controller {
 
 		render();
 	}
+	
+	public static void retrieveVacantCord() {
+		int flag = 0;
+		List<Residence> allResidences = Residence.findAll();
+		List<List<String>> Array_json = new ArrayList<List<String>>();
+
+		for (Residence res : allResidences) {
+			
+			if(res.tenant == null)
+			{
+			String Name = res.from.firstName;
+			String ID = Long.toString(res.id);
+			String lon = Double.toString(res.RetrieveGeolocation().getLongitude());
+			String lat = Double.toString(res.RetrieveGeolocation().getLatitude());
+			String Nameoftenant = (res.tenant == null)
+					? "No tenant yet"
+					: res.tenant.firstName;
+			String eircode = res.eircode;
+
+			Array_json.add(flag, Arrays.asList(ID, lat, lon, Nameoftenant, eircode, Name));
+			flag++;
+		}
+		}
+		renderJSON(Array_json);
+
+
+		
+	}
 
 }

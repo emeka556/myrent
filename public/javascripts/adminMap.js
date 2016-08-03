@@ -1,5 +1,3 @@
-$('.ui.dropdown.newTenancy').dropdown('clear')
-
 let latlong = [];
 var map;
 const markers = [];
@@ -8,14 +6,12 @@ function initialize()
 {
 	retrieveMarkerLocations();
 	
-    var center =new google.maps.LatLng(52.347298,-7.268344);
-    var initRadius = 5000;
+    var center =new google.maps.LatLng(53.347298,-6.268344);
+    var initRadius = 10000;
     const mapProp = {
             center:center,
-            zoom: 7,
-            zoomControl: true,
+            zoom:7,
             mapTypeId:google.maps.MapTypeId.ROADMAP
-            
     };
     
     
@@ -26,20 +22,7 @@ function initialize()
     
       map = new google.maps.Map(mapDiv,mapProp);
    
-
-        circle = new google.maps.Circle({
-        center:center,
-        radius:initRadius,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.4,
-        strokeWeight:1,
-        fillColor:"#0000FF",
-        fillOpacity:0.4,
-        draggable: true
-        });
-    circle.setEditable(true);//allows varying radius be dragging anchor point
-    circle.setMap(map);
-}
+      }
 
 /**
  * Use ajax call to get users and their geolocations
@@ -48,12 +31,13 @@ function initialize()
  * geoObj[0] is descripion.             
  * geoObj[1] is latitude                              
  * geoObj[2] is longitude  
- * We use geoObj[0] in the infoWindow. Click marker to reveal description.
+ * We use geoObj[0] in the infoWindow. 
+ * Click marker to reveal description.
  */
 function retrieveMarkerLocations()
 {
   $(function() {
-    $.get("/Tenants/retrieveVacantCord", function(data) {
+    $.get("/Administrators/getCordinates", function(data) {
       $.each(data, function(index, geoObj) {
         console.log(geoObj[0] + " " + geoObj[1] + " " + geoObj[2] + " " + geoObj[3] + " " + geoObj[4]);
     });
@@ -93,11 +77,13 @@ function fitBounds(latlngStr)
         bounds.extend(marker.position);
     }
     map.fitBounds(bounds);
+    
 }
 
 function setInfoWindowListener(latlngStr)
 {
     const infowindow = new google.maps.InfoWindow();
+    
     for (let i = 0; i < latlng.length; i++) 
     {
       /*respond to click on marker by displaying infowindow text*/
@@ -106,8 +92,10 @@ function setInfoWindowListener(latlngStr)
           return function () {
             infowindow.setContent(latlngStr[i][3] + "<br />" + latlngStr[i][4]);
             infowindow.open(map, marker);
+            
           }
       })(marker, i));
+      
     }
 }
 
