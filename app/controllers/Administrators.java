@@ -18,7 +18,7 @@ public class Administrators extends Controller {
 		List<Tenant> tenants = Tenant.findAll();
 		List<Landlord> landlords = Landlord.findAll();
 
-		Logger.info("just landed on admin page");
+		Logger.info("Just landed on admin page");
 
 		render("Administrator/AdminPage.html", ad, tenants, landlords);      
 	 	    
