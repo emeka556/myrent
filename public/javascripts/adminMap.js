@@ -1,3 +1,6 @@
+$('.ui.dropdown.TenantDelete').dropdown('clear')
+$('.ui.dropdown.LandlordDelete').dropdown('clear')
+
 let latlong = [];
 var map;
 const markers = [];

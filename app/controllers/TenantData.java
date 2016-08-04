@@ -6,9 +6,13 @@ import models.Tenant;
 import play.Logger;
 import play.mvc.Before;
 import play.mvc.Controller;
+import utils.Circle;
+import utils.Geodistance;
+import utils.LatLng;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import models.*;
@@ -110,6 +114,28 @@ public class TenantData extends Controller {
 		index();
 	}
 
+	public static void TenancyReport(double radius, double latcenter, double lngcenter) {
+		Logger.info(radius + " " + latcenter + " " + lngcenter);
+
+		// All reported residences will fall within this circle
+		Circle circle = new Circle(latcenter, lngcenter, radius);
+
+		Tenant tnant = Tenants.getCurrentTenant();
+		List<Residence> residences = new ArrayList<Residence>();
+
+		// Fetch all residences and filter out those within circle
+		List<Residence> residencesAll = Residence.findAll();
+
+		for (Residence res : residencesAll) {
+			LatLng residenceLocation = res.RetrieveGeolocation();
+			if (Geodistance.inCircle(residenceLocation, circle) && res.tenant == null) {
+				residences.add(res);
+			}
+		}
+		Collections.sort(residences, new ReportComparator());
+
+		render("Report/tenantReport.html", tnant, circle, residences);
+	}
 	
 
 }

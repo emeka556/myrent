@@ -4,6 +4,16 @@ let latlong = [];
 var map;
 const markers = [];
 
+function requestReport() {
+	  const center = circle.getCenter();
+	  const latcenter = center.lat().toString();
+	  const lngcenter = center.lng().toString();
+	  const radius = circle.getRadius().toString();
+	  $('#radius').val(radius);
+	  $('#latcenter').val(latcenter);
+	  $('#lngcenter').val(lngcenter);
+	}
+
 function initialize()
 {
 	retrieveMarkerLocations();
@@ -17,6 +27,7 @@ function initialize()
             mapTypeId:google.maps.MapTypeId.ROADMAP
             
     };
+    
     
     
     var mapDiv = document.getElementById("googleMap");

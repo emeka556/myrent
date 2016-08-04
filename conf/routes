@@ -10,7 +10,8 @@ GET      /Administrator/Login                    Administrators.Login
 GET      /Administrator/Logout                   Administrators.Logout
 POST     /authenticate              	         Administrators.authenticate
 GET      /adminpage 	                         Administrators.index
-
+POST     /TenantDelete							 Administrators.DelTenant
+POST     /LandlordDelete						 Administrators.DelLandlord
 
 # Landlords
 GET     /Login									Landlords.Login
@@ -41,6 +42,7 @@ POST    /Tenants/authenticate                   Tenants.authenticate
 POST    /Tenants/register                       Tenants.register
 POST    /Tenants/terminatedRes                  TenantData.tenancyTerminate
 POST    /Tenants/newTenancy						TenantData.changeTenancy
+POST    /TenancyReport							TenantData.TenancyReport
 
 
 
@@ -51,9 +53,8 @@ POST    /InputDatas								InputData.InputDatas
 
 # Report
 GET		/Report			    					Report.index
-
 POST    /generateReport							Report.generateReport
-POST    /TenancyReport							Report.TenancyReport
+
 
 # Contact
 GET 	/Contact								Contact.index

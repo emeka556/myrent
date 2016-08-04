@@ -114,6 +114,62 @@ public class Administrators extends Controller {
 		renderJSON(Array_json);
 
 	}
+	
+	
+	
+	
+	public static void DelTenant(long Tenant_ID) {
+		List<Residence> residences = Residence.findAll();
+		Tenant tenant = Tenant.findById(Tenant_ID);
+		Logger.info("tenant deleted is:  " + tenant.firstName + tenant.lastName);
+
+		for (Residence residence : residences) {
+			if (residence.tenant != null && residence.tenant.equals(tenant)) {
+				residence.tenant = null;
+				residence.save();
+			}
+
+		}
+		tenant.delete();
+
+		index();
+	}
+
+	public static void DelLandlord(long Landlord_ID) {
+
+		List<Residence> residences = Residence.findAll();
+		List<ContactInfo> messages = ContactInfo.findAll();
+		
+		List<Tenant> tenants = Tenant.findAll();
+
+		Landlord landlord = Landlord.findById(Landlord_ID);
+		
+		for (Residence residence : residences) {
+			if (residence.from.equals(landlord)) {
+				residence.delete();
+			}
+		}
+		
+		for (Tenant tenant : tenants) {
+			if (tenant.id != null && tenant.id.equals(landlord)) {
+				tenant.id = null;
+				tenant.save();
+			}
+		}
+				
+		for(ContactInfo message : messages)
+		{
+			if(message.id.equals(landlord))
+			{
+				message.delete();
+			}
+		}
+
+		landlord.delete();
+
+		index();
+
+	}
 
 
 
