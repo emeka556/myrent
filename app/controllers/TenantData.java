@@ -132,7 +132,7 @@ public class TenantData extends Controller {
 				residences.add(res);
 			}
 		}
-		Collections.sort(residences, new ReportComparator());
+		
 
 		render("Report/tenantReport.html", tnant, circle, residences);
 	}

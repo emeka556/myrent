@@ -93,14 +93,18 @@ function callback(data)
  */
 function fitBounds(latlngStr)
 {
+	var image = '/public/images/marker.png';
+	
   const bounds = new google.maps.LatLngBounds();
     for (let i = 0; i < latlngStr.length; i++) 
     {
         marker = new google.maps.Marker({
             position: getLatLng(latlngStr[i]),
-            map: map
+            map: map,
+            icon:image
         });
-        markers[i] = marker;      
+        markers[i] = marker; 
+        marker.setAnimation(google.maps.Animation.BOUNCE);    
         bounds.extend(marker.position);
     }
     map.fitBounds(bounds);
@@ -121,6 +125,8 @@ function setInfoWindowListener(latlngStr)
       })(marker, i));
     }
 }
+
+
 
 /**
  * A helper function to convert the latlng string to individual numbers

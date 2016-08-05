@@ -78,6 +78,7 @@ function fitBounds(latlngStr)
         });
         markers[i] = marker;      
         bounds.extend(marker.position);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
     }
     map.fitBounds(bounds);
     

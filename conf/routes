@@ -12,6 +12,8 @@ POST     /authenticate              	         Administrators.authenticate
 GET      /adminpage 	                         Administrators.index
 POST     /TenantDelete							 Administrators.DelTenant
 POST     /LandlordDelete						 Administrators.DelLandlord
+GET      /AdminReportPage						 AdminReport.index
+
 
 # Landlords
 GET     /Login									Landlords.Login
@@ -43,7 +45,7 @@ POST    /Tenants/register                       Tenants.register
 POST    /Tenants/terminatedRes                  TenantData.tenancyTerminate
 POST    /Tenants/newTenancy						TenantData.changeTenancy
 POST    /TenancyReport							TenantData.TenancyReport
-
+GET     /TenancyReport							TenantData.TenancyReport
 
 
 # InputData

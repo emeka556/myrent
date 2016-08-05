@@ -1,0 +1,63 @@
+#{extends 'main.html' /} #{set title:'Administrator Report Page' /}
+
+
+ <nav class="ui inverted blue menu">
+    <a class="ui item" href="/">Home</a>
+    <a class="ui item" href="/adminpage ">Administrator</a>
+    <a class="ui active item" href="/AdminReportPage">Reports</a>
+   <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+    <a class="ui item" href="/Administrator/Logout ">Log out</a>
+    
+  </nav>
+
+<section class="ui blue segment">
+
+	<div class="ui raised container segment">
+
+		<h3><i class="find blue icon"></i>Report filtering </h3>
+
+		<table class="ui column blue celled table segment">
+			<thead>
+				<tr>
+
+					<th>Eircode</th>
+					<th>Date registered</th>
+					<th>Type</th>
+					<th>Bedrooms</th>
+					<th>Bathrooms</th>
+					<th>Rent(&euro;)</th>
+					<th>Area m<sup>2</sup></th>
+					<th>Landlord</th>
+					<th>Tenant</th>
+					
+				</tr>
+			</thead>
+
+			<div class="ui list">
+
+				#{list items: residences, as:'res'}
+
+				<tbody>
+
+					<tr>
+						<td><i class="world blue icon"></i>${res.eircode}</td>
+						<td><i class="calendar blue icon"></i>${res.postDate}</td>
+						<td><i class="home blue icon"></i>${res.residenceType}</td>
+						<td><i class="bed blue icon"></i>${res.numbOfBedrooms}</td>
+						<td><i class="male blue icon"></i><i class="female blue icon"></i>${res.numberBathrooms}</td>
+						<td><i class="money blue icon"></i>${res.rent}</td>
+						<td><i class="cube blue icon"></i>${res.area}</td>
+						<td><i class="large user blue icon"></i>&nbsp${res.from.firstName}&nbsp${res.from.lastName}</td>
+						<td><i class="user blue icon"></i>${res.tenant} </td>
+						
+					</tr>
+			</div>
+
+			</tbody>
+
+			#{/list}
+
+		</table>
+		 
+		
+</section>
