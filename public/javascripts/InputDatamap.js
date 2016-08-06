@@ -1,5 +1,5 @@
 function initialize() 
-{
+{	 const
      latlng = new google.maps.LatLng(53.347298, -6.268344);
 
     const mapOptions = 
