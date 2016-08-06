@@ -65,7 +65,7 @@ Residence(residence3):
     geolocation: 53.947298,  -6.468344 
     eircode: V94 D922
     rent: 800 
-    residenceType: house 
+    residenceType: studio 
     numbOfBedrooms: 3 
     area: 120 
     numberBathrooms: 2 
@@ -111,7 +111,7 @@ Residence(residence7):
     geolocation: 52.223344,  -6.56667
     eircode: X91 YYX4
     rent: 800 
-    residenceType: house 
+    residenceType: flat 
     numbOfBedrooms: 3 
     area: 70 
     numberBathrooms: 2

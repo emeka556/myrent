@@ -5,12 +5,12 @@
 	 <a class="ui item" href="/"><i class="home icon"></i>Welcome</a>
 	 <a class="ui item" href="/Tenants/tenant"><i class="user icon"></i>Tenant</a> 
   <a class="ui active item" href="/TenancyReport"><i class="user icon"></i>Search Report</a> 
-  
+  <a class="ui  item" href="/Contact"><i class="call icon"></i>Contact</a>
   <a class="ui item" href="/Tenants/Logout"><i class="sign out icon"></i>Logout</a> 
 
 </nav>
 <section class="ui segment">
-	<h4>Report of Vacant Residences</h4>
+	<h4><i class="find blue icon"></i>Report of Vacant Residences</h4>
 
 	<section class="ui segment">
 
@@ -18,10 +18,10 @@
 			<thead>
 
 				<tr>
-					<th>Tenant</th>
-					<th>Search: radius(m)</th>
-					<th>Centre(latitude)</th>
-					<th>Centre(longitude)</th>
+					<th><i class="user blue icon"></i>Tenant</th>
+					<th><i class="search blue icon"></i>Search: radius(m)</th>
+					<th><i class="world blue icon"></i>Centre(latitude)</th>
+					<th><i class="world blue icon"></i>Centre(longitude)</th>
 				</tr>
 
 			</thead>
@@ -59,12 +59,12 @@
 				<tbody>
 
 					<tr>
-						<td>${res.eircode}</td>
-						<td>${res.postDate}</td>
-						<td>${res.rent}</td>
-						<td>${res.numbOfBedrooms}</td>
-						<td>${res.numberBathrooms}</td>
-						<td>${res.area}</td>
+						<td><i class="world blue icon"></i>${res.eircode}</td>
+						<td><i class="calendar blue icon"></i>${res.postDate}</td>
+						<td><i class="money blue icon"></i>${res.rent}</td>
+						<td><i class="bed blue icon"></i>${res.numbOfBedrooms}</td>
+						<td><i class="male blue icon"></i><i class="female blue icon"></i>${res.numberBathrooms}</td>
+						<td><i class="cube blue icon"></i>${res.area}</td>
 					</tr>
 
 

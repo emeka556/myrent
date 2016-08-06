@@ -65,7 +65,7 @@ public class Report extends Controller
         
       }
     }
-    render("Report/renderReport.html", user, circle, residences);
+    render("Report/landlordReport.html", user, circle, residences);
   
   }
   
