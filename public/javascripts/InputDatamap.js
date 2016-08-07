@@ -1,6 +1,5 @@
 function initialize() 
 {	
-	
 	const
      latlng = new google.maps.LatLng(53.347298, -6.268344);
 
@@ -8,7 +7,7 @@ function initialize()
     {
         center      : new google.maps.LatLng(latlng.lat(), latlng.lng()),
         mapTypeId   : google.maps.MapTypeId.MAP,
-        zoom        : 18
+        zoom        : 19
     };
     
      map = new google.maps.Map(document.getElementById("map-canvas"),
@@ -21,8 +20,7 @@ function initialize()
         position    : latlng,
         title       : "Drag and drop on your property!",
         draggable   : true
-        
-        
+                
     });
 
    
