@@ -35,14 +35,14 @@ public class AdminReport extends Controller {
 					residences.add(res);
 				}
 			}
-			render("Administrator/AdminReport.html", residences);
+			render("Report/AdminReport.html", residences);
 			break;
 
 		case 2:
 			Collections.sort(allResidences, new ReportResidenceTypeComparator());
 
 			residences.addAll(allResidences);
-			render("Administrator/AdminReport.html", residences);
+			render("Report/AdminReport.html", residences);
 
 			break;	
 			
@@ -53,7 +53,7 @@ public class AdminReport extends Controller {
 
 			residences.addAll(allResidences);
 
-			render("Administrator/AdminReport.html", residences);
+			render("Report/AdminReport.html", residences);
 			break;
 
 		case 4:
