@@ -109,7 +109,7 @@ Residence(residence6):
 Residence(residence7): 
     from: homer 
     geolocation: 52.223344,  -6.56667
-    eircode: X91 YYX4
+    eircode: X94 YFX2
     rent: 800 
     residenceType: flat 
     numbOfBedrooms: 3 
