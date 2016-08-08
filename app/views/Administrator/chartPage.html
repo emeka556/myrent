@@ -1,0 +1,59 @@
+#{extends 'main.html' /} #{set title:'Administrator Report Page' /}
+
+
+ <nav class="ui inverted blue menu">
+    <a class="ui item" href="/">Home</a>
+    <a class="ui item" href="/adminpage ">Administrator</a>
+    <a class="ui item" href="/AdminReportPage">Reports</a>
+    <a class="ui active item" href="/ChartPage">Charts</a>
+   <a class="ui item" href="/Contact"><i class="call icon"></i>Contact</a>
+    <a class="ui item" href="/Administrator/Logout ">Log out</a>
+    
+  </nav>
+
+<section class="ui segment">
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="ui segment">
+      <h4>List rents</h4>
+    
+		<table class="ui column celled table segment">
+			<thead>
+				<tr>
+
+					<th>Landlord</th>
+					<th>Eircode</th>
+					<th>Rent</th>
+					
+					
+				</tr>
+			</thead>
+
+			<div class="ui list">
+			
+
+				#{list items: residences, as:'res'}
+
+				<tbody>
+
+					<tr>
+					<td><i class="large user blue icon"></i>&nbsp${res.from.firstName}&nbsp${res.from.lastName}</td>
+						<td><i class="world blue icon"></i>${res.eircode}</td>
+						<td><i class="money blue icon"></i>${res.rent}</td>
+										
+						
+					</tr>
+			</div>
+	
+			</tbody>
+
+			#{/list}
+
+		</table>
+		 
+		
+	</div>
+		</div>
+			</div>
+ 
+</section>

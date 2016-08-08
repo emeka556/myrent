@@ -14,6 +14,7 @@ POST     /TenantDelete							 Administrators.DelTenant
 POST     /LandlordDelete						 Administrators.DelLandlord
 GET      /AdminReportPage						 AdminReport.index
 POST     /AdminFilterReport						 AdminReport.ReportFilter
+GET 	 /ChartPage								 AdminReport.chart
 
 
 # Landlords

@@ -80,7 +80,7 @@ public class TenantData extends Controller {
 			if (residence.tenant != null) {
 
 			}
-			if (residence.tenant.equals(userTenant))
+			if ((residence.tenant.equals(userTenant)) )
 				break;
 			{
 				Logger.info("The residence deleted is : " + residence.tenant.firstName + "'s resident");

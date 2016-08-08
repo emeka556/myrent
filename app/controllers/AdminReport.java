@@ -68,5 +68,12 @@ public class AdminReport extends Controller {
 		}
 
 	}
+	public static void chart() {
+		
+		List<Residence> residences = Residence.findAll();
+		
+
+		render("Administrator/chartPage.html", residences);
+	}
 
 }
