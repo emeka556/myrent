@@ -8,50 +8,40 @@ import java.util.*;
 import models.*;
 
 public class Administrators extends Controller {
-	
-	  
-	 
+
 	public static void index() {
-		
-		Administrator ad = getCurrentAdmin(); 
+
+		Administrator ad = getCurrentAdmin();
 
 		List<Tenant> tenants = Tenant.findAll();
 		List<Landlord> landlords = Landlord.findAll();
 
 		Logger.info("Just landed on admin page");
 
-		render("Administrator/AdminPage.html", ad, tenants, landlords);      
-	 	    
-	    
+		render("Administrator/AdminPage.html", ad, tenants, landlords);
+
 	}
 
-	
-	
 	/**
 	 * renders login
 	 */
 	public static void Login() {
-		session.clear(); //clears any user that is logged in
+		session.clear(); // clears any user that is logged in
 		render("Administrator/login.html");
 	}
 
 	/**
 	 * clears session info logged
 	 */
-	
-	
-	
+
 	public static void Logout() {
-		//Landlord landlord = Landlords.getCurrentLandlord();
-		//Tenant tenant = getCurrentTenant();
-		
+		// Landlord landlord = Landlords.getCurrentLandlord();
+		// Tenant tenant = getCurrentTenant();
+
 		session.remove("logg_in_AdminID");
 		Welcome.index();
 
 	}
-
-	
-	  
 
 	public static void authenticate(String email, String password) {
 		Logger.info("Attempting to authenticate with " + email + ":" + password);
@@ -65,23 +55,18 @@ public class Administrators extends Controller {
 			Login();
 		}
 	}
-	
-	public static Administrator getLoginAdmin()
-	  {
-	    Administrator admin = null;
-	    if (session.get("logg_in_AdminID") != null)
-	    {
-	      String userId = session.get("logg_in_AdminID");
-	      admin = Administrator.findById(Long.parseLong(userId));
-	      
-	    }
-	    else
-	    {
-	      Welcome.index();
-	    }
-	    return admin;
-	  }
 
+	public static Administrator getLoginAdmin() {
+		Administrator admin = null;
+		if (session.get("logg_in_AdminID") != null) {
+			String userId = session.get("logg_in_AdminID");
+			admin = Administrator.findById(Long.parseLong(userId));
+
+		} else {
+			Welcome.index();
+		}
+		return admin;
+	}
 
 	public static Administrator getCurrentAdmin() {
 		String userId = session.get("logg_in_AdminID");
@@ -92,7 +77,7 @@ public class Administrators extends Controller {
 		Logger.info("Logged in Admin: " + logged_in_admin.email);
 		return logged_in_admin;
 	}
-	
+
 	public static void getCordinates() {
 		int flag = 0;
 		List<Residence> Residences = Residence.findAll();
@@ -103,21 +88,17 @@ public class Administrators extends Controller {
 			String ID = Long.toString(res.id);
 			String lon = Double.toString(res.RetrieveGeolocation().getLongitude());
 			String lat = Double.toString(res.RetrieveGeolocation().getLatitude());
-			String Nameoftenant = (res.tenant == null) ?   "no tenant yet" : res.tenant.firstName;			
+			String Nameoftenant = (res.tenant == null) ? "no tenant yet" : res.tenant.firstName;
 			String Eircode = res.eircode;
 
-			Array_json.add(flag,
-					Arrays.asList(ID, lat, lon, Nameoftenant, Eircode));
+			Array_json.add(flag, Arrays.asList(ID, lat, lon, Nameoftenant, Eircode));
 			flag++;
 		}
 
 		renderJSON(Array_json);
 
 	}
-	
-	
-	
-	
+
 	public static void DelTenant(long Tenant_ID) {
 		List<Residence> residences = Residence.findAll();
 		Tenant tenant = Tenant.findById(Tenant_ID);
@@ -139,28 +120,26 @@ public class Administrators extends Controller {
 
 		List<Residence> residences = Residence.findAll();
 		List<ContactInfo> messages = ContactInfo.findAll();
-		
+
 		List<Tenant> tenants = Tenant.findAll();
 
 		Landlord landlord = Landlord.findById(Landlord_ID);
-		
+
 		for (Residence residence : residences) {
 			if (residence.from.equals(landlord)) {
 				residence.delete();
 			}
 		}
-		
+
 		for (Tenant tenant : tenants) {
 			if (tenant.id != null && tenant.id.equals(landlord)) {
 				tenant.id = null;
 				tenant.save();
 			}
 		}
-				
-		for(ContactInfo message : messages)
-		{
-			if(message.id.equals(landlord))
-			{
+
+		for (ContactInfo message : messages) {
+			if (message.id.equals(landlord)) {
 				message.delete();
 			}
 		}
@@ -170,8 +149,5 @@ public class Administrators extends Controller {
 		index();
 
 	}
-
-	
-
 
 }

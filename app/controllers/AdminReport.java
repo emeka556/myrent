@@ -79,7 +79,6 @@ public class AdminReport extends Controller {
 	public static void getPercents() {
 		double SumOfRent = 0;
 		
-
 		List<Landlord> Landlords = Landlord.findAll();
 		List<Residence> allResi = Residence.findAll();
 		List<List<String>> Arrayjs = new ArrayList<List<String>>();
@@ -95,8 +94,7 @@ public class AdminReport extends Controller {
 			String Str = percent(Rentlandlord, SumOfRent);
 
 			Arrayjs.add( Arrays.asList(Str, landlord.firstName + " " + landlord.lastName));
-			
-
+		
 		}
 		renderJSON(Arrayjs);
 

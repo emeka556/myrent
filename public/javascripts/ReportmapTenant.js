@@ -1,4 +1,4 @@
-$('.ui.dropdown.newTenancy').dropdown('clear')
+
 
 let latlong = [];
 var map;

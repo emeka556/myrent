@@ -65,13 +65,13 @@
       <!-- Edit Residence -->
 			<form class="ui form segment" action= "/LandlordEditResidence" method="POST" >
 				<div class="ui fluid selection dropdown" id="EditResidence"  >
-				  <input name="eircode" type="hidden">
+				  <input name="geolocation" type="hidden">
 					<div class="default text">Edit Residence</div>
 					<i class="dropdown icon"></i>
 					<div class="menu">
 								
 								#{list items: allresidences, as:'res'}
-					 <div class="item" data-value="${res.eircode}"> ${res.eircode}</div>
+					 <div class="item" data-value="${res.geolocation}"> ${res.eircode}</div>
 					 
 				   #{/list}	
 									

@@ -14,9 +14,7 @@
 
 <section class="ui blue segment">
 
-	<div class="ui raised container segment">
-
-		<div class="ui grid segment">
+			<div class="ui grid segment">
 			<div class="ui six wide column">
 				<h2>Administration page:</h2>
 				<h3>Register landlords and tenants</h3>
@@ -30,14 +28,15 @@
 															
 				</section>
 				
+				
 				<form class="ui form segment" action="/LandlordDelete" method="POST">
         
-        <select class="ui fluid dropdown LandlordDelete" name="Landlord_ID" required>
+        <select class="ui fluid dropdown LandlordDelete" name="Landlord_ID" >
         <option value="" selected>Select a Landlord to delete</option>
         <div class= "ui list">
         #{list items: landlords, as:'land'}
        
-       <option value="${land.id}">${land.firstName}</option>
+       <option value="${land.id}">${land.email}</option>
        
         #{/list}
         </div>
@@ -45,18 +44,19 @@
         </select>
         <section>
         <button class="ui fluid blue submitt button">Delete landlord</button>
+        <div class="ui error message"></div>
         </section>        
         </form>
         
               
-        <form class="ui form segment" action="/TenantDelete" method="POST">
+        <form class="ui form segment delTenant" action="/TenantDelete" method="POST">
         
-        <select class="ui fluid dropdown TenantDelete" name="Tenant_ID" required>
+        <select class="ui fluid dropdown TenantDelete" name="Tenant_ID" >
         <option value="" selected>Select a Tenant to delete</option>
         <div class= "ui list">
         #{list items: tenants, as:'tent'}
         
-         <option value="${tent.id}">${tent.firstName}</option>
+         <option value="${tent.id}">${tent.email}</option>
         
         #{/list}
         </div>
@@ -64,6 +64,7 @@
         </select>
         <section>
         <button  class="ui fluid blue submitt button">Delete tenant</button>
+        <div class="ui error message"></div>
         </section>        
         </form>
 				
@@ -72,6 +73,7 @@
 			</div>
 			<div class="ui ten wide column">
 				<section class="ui segment">
+				
 					<div id="googleMap" style="width:500px;height:380px;"></div>
 
 				</section>
@@ -81,16 +83,18 @@
 	</div>
 </section>
     
-       
-        
+             
         
       </form>
    	  
 
-				
+			
+</section>
+	
 
 		
-</section>
+
 <script
 src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC6BW4KWCicIlG69d_Q-qjZCXyvtzEQn6M"></script>
 <script src="@{'/public/javascripts/adminMap.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/adminConfigPage.js'}" type="text/javascript" charset="utf-8"></script>

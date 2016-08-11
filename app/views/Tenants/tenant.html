@@ -42,7 +42,7 @@
      <form class="ui form segment" action="/Tenants/newTenancy" method="POST">
 				<h3>Select from vacant residences for new rentals:</h3>
 				<section class="ui segment">
-					<select class="ui fluid dropdown newTenancy" name="newResidence" required>
+					<select class="ui fluid dropdown newTenancy" name="newResidence" >
 						<option value="" selected>Vacant Residences</option>
 						<div class="ui list">
 						#{list items: allresidences, as: 'res'}
@@ -55,6 +55,7 @@
 				
 				<section>
 				<button class="ui fluid blue submitt button">Change tenancy</button>
+				 <div class="ui error message"></div>
 			</form>
 
 		</div>
@@ -84,4 +85,5 @@
 "></script>
 
 <script src="@{'/public/javascripts/ReportmapTenant.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/tenant.js'}" type="text/javascript" charset="utf-8"></script>
      

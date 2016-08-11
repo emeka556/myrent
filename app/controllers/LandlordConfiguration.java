@@ -48,15 +48,13 @@ public class LandlordConfiguration extends Controller {
 		index();
 	}
 	
-	public static void residenceEdit(String eircode , int rent)
+	public static void residenceEdit(String geolocation , int rent)
 	  {
 		 
-		 
-		 
-	    Residence residence = Residence.findByEircode(eircode);
+				 
+	    Residence residence = Residence.findByGeolocation(geolocation);
 	    
-		
-	    
+			    
 	    render("Landlords/landlordeditresidence.html", residence);
 	  }
 	
