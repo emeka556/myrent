@@ -13,7 +13,9 @@ public class AdminReport extends Controller {
 
 	public static void index() {
 		String filter = "(all)";
-		List<Residence> residences = Residence.findAll();
+		
+		List<Residence> residences = new ArrayList<Residence>();
+		 residences = Residence.findAll();
 		List<Tenant> tenants = Tenant.findAll();
 
 		render("Report/AdminReport.html", residences, filter, tenants);

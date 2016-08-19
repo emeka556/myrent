@@ -145,10 +145,13 @@ public class Tenants extends Controller {
 			String ID = Long.toString(res.id);
 			String lon = Double.toString(res.RetrieveGeolocation().getLongitude());
 			String lat = Double.toString(res.RetrieveGeolocation().getLatitude());
-			String Nameoftenant = (res.tenant == null)
-					? "No tenant yet"
-					: res.tenant.firstName;
-			String eircode = res.eircode;
+			String Nameoftenant = (res.tenant == null) // String Nameoftenant;
+					? "No tenant yet"                  // if (res.tenant == null){
+					: res.tenant.firstName;            //Nameoftenant = "no tenant yet";
+			                                           //                              }
+			String eircode = res.eircode;			 //else { Nameoftenant = res.tenant.firstName;
+													//      }
+			
 
 			Array_json.add(flag, Arrays.asList(ID, lat, lon, Nameoftenant, eircode, Name));
 			flag++;

@@ -88,7 +88,16 @@ public class Administrators extends Controller {
 			String ID = Long.toString(res.id);
 			String lon = Double.toString(res.RetrieveGeolocation().getLongitude());
 			String lat = Double.toString(res.RetrieveGeolocation().getLatitude());
-			String Nameoftenant = (res.tenant == null) ? "no tenant yet" : res.tenant.firstName;
+			 
+												  	
+			String Nameoftenant;                  // String Nameoftenant = (res.tenant == null)
+			if (res.tenant == null){			  // ? "No tenant yet"  
+				 Nameoftenant = "No tenant yet";  // : res.tenant.firstName;
+				
+			}
+			else {
+				 Nameoftenant = res.tenant.firstName; //ABOVE COMMENT IS A SHORTHAND (IF CONDITION) TO METHOD ON LEFT
+			}
 			String Eircode = res.eircode;
 
 			Array_json.add(flag, Arrays.asList(ID, lat, lon, Nameoftenant, Eircode));
@@ -119,8 +128,7 @@ public class Administrators extends Controller {
 	public static void DelLandlord(long Landlord_ID) {
 
 		List<Residence> residences = Residence.findAll();
-		List<ContactInfo> messages = ContactInfo.findAll();
-
+		
 		List<Tenant> tenants = Tenant.findAll();
 
 		Landlord landlord = Landlord.findById(Landlord_ID);
@@ -135,12 +143,6 @@ public class Administrators extends Controller {
 			if (tenant.id != null && tenant.id.equals(landlord)) {
 				tenant.id = null;
 				tenant.save();
-			}
-		}
-
-		for (ContactInfo message : messages) {
-			if (message.id.equals(landlord)) {
-				message.delete();
 			}
 		}
 

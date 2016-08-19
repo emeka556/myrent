@@ -48,8 +48,11 @@
 						<td><i class="male blue icon"></i><i class="female blue icon"></i>${res.numberBathrooms}</td>
 						<td><i class="money blue icon"></i>${res.rent}</td>
 						<td><i class="cube blue icon"></i>${res.area}</td>
-						<td><i class="large user blue icon"></i>&nbsp${res.from.firstName}&nbsp${res.from.lastName}</td>
-						<td><i class="user blue icon"></i>${res.tenant} </td>
+						<td><i class="large user blue icon"></i>&nbsp${res.from.firstName}&nbsp${res.from.lastName}</td>#{if
+				(res.tenant != null)}
+				<td><i class="small user blue icon"></i>&nbsp;${res.tenant.firstName}&nbsp;${res.tenant.lastName}</td>
+				#{else}
+				<td>&nbsp;&nbsp;</td> #{/else} #{/if}
 						
 					</tr>
 			</div>
